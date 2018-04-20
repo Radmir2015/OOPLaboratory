@@ -1,0 +1,25 @@
+{
+	"users":
+	[
+		{
+			"auth": {
+				"login": "123",
+				"password": "234"
+			},
+			"privacy": {
+				"name": "Ivan",
+				"surname": "Ivanov"
+			}
+		},
+		{
+			"auth": {
+				"login": "234",
+				"password": "345"
+			},
+			"privacy": {
+				"name": "Petr",
+				"surname": "Petrov"
+			}
+		}
+	]
+}
