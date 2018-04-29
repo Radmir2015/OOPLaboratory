@@ -7,6 +7,7 @@ Database::Database() {
 Database::Database(std::string filename) {
 	std::ifstream file(filename);
 	file >> this->j;
+	this->isDbLoaded = true;
 }
 
 void Database::save(std::string filename) {

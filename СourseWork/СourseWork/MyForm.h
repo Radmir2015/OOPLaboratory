@@ -14,6 +14,8 @@ namespace —ourseWork {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+	Account acc;
+
 	/// <summary>
 	/// —‚Ó‰Í‡ ‰Îˇ MyForm
 	/// </summary>
@@ -149,7 +151,6 @@ namespace —ourseWork {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		Account acc;
 		acc.connectToDb("database.json");
 		acc.regist(toString(textBox1->Text), toString(textBox2->Text), "100$");
 		textBox3->Text = acc.tn.intro();
@@ -158,7 +159,6 @@ namespace —ourseWork {
 		acc.db.save("database1.json");
 	}
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-		Account acc;
 		acc.connectToDb("database.json");
 		acc.login(toString(textBox1->Text), toString(textBox2->Text));
 		textBox3->Text = acc.tn.intro();

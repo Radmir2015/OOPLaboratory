@@ -16,4 +16,6 @@ class Database {
 		Tenant getUser(std::string login, std::string password);
 		//Tenant createUser(std::string login, std::string password, std::string money);
 		json j;
+		
+		bool isDbLoaded;
 };

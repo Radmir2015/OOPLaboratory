@@ -22,8 +22,19 @@
         },
         {
             "auth": {
+                "login": "1232343",
+                "password": "345645"
+            },
+            "privacy": {
+                "money": "100$",
+                "name": "",
+                "surname": ""
+            }
+        },
+        {
+            "auth": {
                 "login": "234234",
-                "password": "234234"
+                "password": "234"
             },
             "privacy": {
                 "money": "100$",

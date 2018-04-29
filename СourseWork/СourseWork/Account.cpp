@@ -6,8 +6,10 @@ Account::Account() {
 }
 
 void Account::connectToDb(std::string path) {
-	Database db(path);
-	this->db = db;
+	if (!this->db.isDbLoaded) {
+		Database db(path);
+		this->db = db;
+	}
 }
 
 void Account::login(std::string login, std::string password) {
