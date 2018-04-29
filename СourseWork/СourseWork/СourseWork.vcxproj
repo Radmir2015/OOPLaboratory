@@ -138,6 +138,7 @@
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="Global.h" />
+    <ClCompile Include="Landlord.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Tenant.cpp" />
   </ItemGroup>

@@ -9,8 +9,11 @@ using json = nlohmann::json;
 
 class Database {
 	public:
+		Database();
 		Database(std::string filename);
+		void save(std::string filename);
+		void addUserToDb(Tenant tn);
 		Tenant getUser(std::string login, std::string password);
-	private:
+		//Tenant createUser(std::string login, std::string password, std::string money);
 		json j;
 };
