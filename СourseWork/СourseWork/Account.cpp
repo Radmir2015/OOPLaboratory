@@ -16,47 +16,56 @@ void Account::login(std::string login, std::string password) {
 	this->tn = this->db.getUser(login, password);
 }
 
-void Account::regist(std::string login, std::string password, std::string money) {
-	json person = R"(
+void Account::regist(std::string login, std::string password, std::string name, std::string surname,
+	std::string father, std::string address, unsigned int area, unsigned int people, std::string facilities) {
+	/*json person = R"(
 		{
             "auth": {
                 "login": "",
                 "password": ""
             },
             "privacy": {
-                "money": "",
                 "name": "",
-                "surname": ""
+                "surname": "",
+				"fathersname": "",
+				"address: "",
+				"area": 0,
+				"livingpeople": 0,
+				"facilities": ""
             }
         }
-	)"_json;
+	)"_json;*/
+	/*json person = {
+		{"auth", {
+			{"login", ""},
+			{"password", ""}
+		},
+		"privacy", {
+			{"name", ""},
+			{"surname", ""},
+			{"father's name", ""},
+			{"address", ""},
+			{"area", 0},
+			{"living people", 0},
+			{"facilities", ""}
+		}
+		}
+	};*/
+
+	json person;
+
 	person["auth"]["login"] = login;
 	person["auth"]["password"] = password;
-	person["privacy"]["money"] = money;
+	person["privacy"]["name"] = name;
+	person["privacy"]["surname"] = surname;
+	person["privacy"]["father's name"] = father;
+	person["privacy"]["address"] = address;
+	person["privacy"]["area"] = area;
+	person["privacy"]["living people"] = people;
+	person["privacy"]["facilities"] = facilities;
 
 	Tenant temp(&person);
-	//temp.j = &person;
 
 	this->db.addUserToDb(temp);
 	this->tn = this->db.getUser(login, password);
-}
-
-Tenant Account::createUser(std::string login, std::string password, std::string money) {
-	json person = R"(
-		{
-            "auth": {
-                "login": "",
-                "password": ""
-            },
-            "privacy": {
-                "money": "",
-                "name": "",
-                "surname": ""
-            }
-        }
-	)"_json;
-	person["auth"]["login"] = login;
-	person["auth"]["password"] = password;
-	person["privacy"]["money"] = money;
-	return Tenant(person);
 }

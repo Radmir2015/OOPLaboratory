@@ -13,4 +13,8 @@ namespace Global {
 		using namespace System;
 		return gcnew String(str.c_str());
 	}
+
+	static unsigned int toInt(System::String^ str = "") {
+		return System::Convert::ToInt16(str);
+	}
 };

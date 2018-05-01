@@ -11,11 +11,13 @@ class Database {
 	public:
 		Database();
 		Database(std::string filename);
-		void save(std::string filename);
+		void save(std::string filename = "");
 		void addUserToDb(Tenant tn);
+		void deleteUser(Tenant tn);
 		Tenant getUser(std::string login, std::string password);
 		//Tenant createUser(std::string login, std::string password, std::string money);
 		json j;
 		
 		bool isDbLoaded;
+		std::string filename = "";
 };

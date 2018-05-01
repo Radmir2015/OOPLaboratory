@@ -13,8 +13,7 @@ class Account {
 		Account();
 		void connectToDb(std::string path);
 		void login(std::string login, std::string password);
-		void regist(std::string login, std::string password, std::string money);
-		Tenant createUser(std::string login, std::string password, std::string money);
+		void regist(std::string login, std::string password, std::string name, std::string surname, std::string father, std::string address, unsigned int area, unsigned int people, std::string facilities);
 		Tenant tn;
 		Landlord ll;
 		Database db;

@@ -5,12 +5,15 @@ Database::Database() {
 }
 
 Database::Database(std::string filename) {
+	this->filename = filename;
 	std::ifstream file(filename);
 	file >> this->j;
 	this->isDbLoaded = true;
 }
 
 void Database::save(std::string filename) {
+	if (filename == "" && this->filename != "")
+		filename = this->filename;
 	std::ofstream file(filename);
 	file << std::setw(4) << this->j << std::endl;
 }
@@ -26,7 +29,9 @@ Tenant Database::getUser(std::string login, std::string password) {
 			return Tenant(&j["users"][i]);
 	}*/
 	
-	return Tenant();
+	throw std::exception("User isn't found...");
+
+	//return Tenant();
 }
 
 void Database::addUserToDb(Tenant tn) {
@@ -34,4 +39,11 @@ void Database::addUserToDb(Tenant tn) {
 		this->j["users"].push_back(*(tn.j));
 	else
 		this->j["users"].push_back(tn.ghost);
+}
+
+void Database::deleteUser(Tenant tn) {
+	if (*(tn.j) != 0)
+		*(tn.j) = nullptr;
+	else
+		tn.ghost = nullptr;
 }
