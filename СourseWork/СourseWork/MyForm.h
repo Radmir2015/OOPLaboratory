@@ -64,6 +64,7 @@ namespace ÑourseWork {
 	private: System::Windows::Forms::TextBox^  textBox4;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::TextBox^  textBox10;
+	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
 	protected:
 
 	private:
@@ -102,6 +103,7 @@ namespace ÑourseWork {
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -311,19 +313,28 @@ namespace ÑourseWork {
 			// 
 			// textBox10
 			// 
-			this->textBox10->Location = System::Drawing::Point(12, 188);
+			this->textBox10->Location = System::Drawing::Point(12, 294);
 			this->textBox10->Multiline = true;
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->ReadOnly = true;
-			this->textBox10->Size = System::Drawing::Size(388, 159);
+			this->textBox10->Size = System::Drawing::Size(388, 53);
 			this->textBox10->TabIndex = 9;
-			this->textBox10->Text = L"Status:";
+			this->textBox10->Text = L"Status:\r\n";
+			// 
+			// dateTimePicker1
+			// 
+			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Short;
+			this->dateTimePicker1->Location = System::Drawing::Point(13, 188);
+			this->dateTimePicker1->Name = L"dateTimePicker1";
+			this->dateTimePicker1->Size = System::Drawing::Size(83, 20);
+			this->dateTimePicker1->TabIndex = 10;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(413, 359);
+			this->Controls->Add(this->dateTimePicker1);
 			this->Controls->Add(this->textBox10);
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"MyForm";
@@ -337,19 +348,27 @@ namespace ÑourseWork {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		acc.connectToDb("database.json");
+
+		if (textBox7->Text == "") textBox7->Text = "0";
+		if (textBox8->Text == "") textBox8->Text = "0";
+
 		acc.regist(toString(textBox1->Text), toString(textBox2->Text), toString(textBox3->Text),
 		toString(textBox4->Text), toString(textBox5->Text), toString(textBox6->Text),
 		toInt(textBox7->Text), toInt(textBox8->Text), toString(textBox9->Text));
-		textBox10->Text += acc.tn.intro() + "\r\n";
+
+		textBox10->Text += "Successfully registered: " + acc.tn.intro() + "\r\n";
 
 		//acc.tn.addIntoJson("money", "1300$");
-		acc.db.save("database1.json");
+		acc.db.save("database.json");
 	}
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+		textBox10->Text += dateTimePicker1->Value.ToString() + "\r\n";
+		textBox10->Text += dateTimePicker1->Value.ToString() + "\r\n";
 		acc.connectToDb("database.json");
+
 		try {
 			acc.login(toString(textBox1->Text), toString(textBox2->Text));
-			textBox10->Text += acc.tn.intro() + "\r\n";
+			textBox10->Text += "Logged in: " + acc.tn.intro() + " account\r\n";
 		}
 		catch (json::exception e) {
 			textBox10->Text += toFormString(e.what()) + "\r\n";
@@ -359,10 +378,10 @@ namespace ÑourseWork {
 		}
 	}
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-		acc.connectToDb("database1.json");
+		acc.connectToDb("database.json");
 		acc.db.deleteUser(acc.db.getUser(toString(textBox1->Text), toString(textBox2->Text)));
 		acc.db.save();
-		textBox10->Text += "Account is deleted...\r\n";
+		textBox10->Text += "Account is deleted from " + toFormString(acc.db.filename) + "\r\n";
 	}
 };
 }

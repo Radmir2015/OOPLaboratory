@@ -42,8 +42,16 @@ void Database::addUserToDb(Tenant tn) {
 }
 
 void Database::deleteUser(Tenant tn) {
-	if (*(tn.j) != 0)
+	int index = -1;
+	for (int i = 0; i < this->j["users"].size(); i++)
+		if (this->j["users"][i] == *(tn.j)) {
+			index = i;
+			break;
+		}
+	if (index != -1)
+		this->j["users"].erase(index);
+	/*if (*(tn.j) != 0)
 		*(tn.j) = nullptr;
 	else
-		tn.ghost = nullptr;
+		tn.ghost = nullptr;*/
 }

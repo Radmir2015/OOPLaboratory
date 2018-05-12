@@ -22,17 +22,17 @@
         },
         {
             "auth": {
-                "login": "fss",
-                "password": "fsdaf"
+                "login": "34545",
+                "password": "342232"
             },
             "privacy": {
-                "address": "sfes",
-                "area": 10,
-                "facilities": "fdf",
-                "father's name": "sfs",
-                "living people": 2,
-                "name": "wefw",
-                "surname": "saef"
+                "address": "",
+                "area": 23,
+                "facilities": "",
+                "father's name": "",
+                "living people": 3,
+                "name": "",
+                "surname": ""
             }
         }
     ]

@@ -6,7 +6,7 @@ Account::Account() {
 }
 
 void Account::connectToDb(std::string path) {
-	if (!this->db.isDbLoaded) {
+	if (!this->db.isDbLoaded || path != this->db.filename) {
 		Database db(path);
 		this->db = db;
 	}
