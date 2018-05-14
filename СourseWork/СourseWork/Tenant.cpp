@@ -3,6 +3,8 @@
 #include "json.hpp"
 using json = nlohmann::json;
 
+#include <vector>
+
 Tenant::Tenant() {
 
 }
@@ -22,6 +24,10 @@ Tenant::Tenant(std::string name, std::string surname) {
 
 void Tenant::addIntoJson(std::string path, std::string key) {
 	(*j).at("privacy")[path] = key;
+}
+
+std::vector<std::string> Tenant::getNeedToPay() {
+	return (*j).at("pays").at("needToPay");
 }
 
 System::String^ Tenant::intro() {

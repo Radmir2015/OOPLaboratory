@@ -8,6 +8,9 @@
             "privacy": {
                 "name": "Ivan",
                 "surname": "Ivanov"
+            },
+            "pays": {
+                "needToPay": ["water", "gas"]
             }
         },
         {
@@ -18,7 +21,20 @@
             "privacy": {
                 "name": "Petr",
                 "surname": "Petrov"
+            },
+            "pays": {
+                "needToPay": ["water"]
             }
         }
-    ]
+    ],
+    "payment": {
+        "water": {
+            "normal": 10,
+            "tariffe": 3
+        },
+        "gas": {
+            "normal": 5,
+            "tariffe": 5
+        }
+    }
 }

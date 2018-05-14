@@ -7,6 +7,7 @@ Database::Database() {
 Database::Database(std::string filename) {
 	this->filename = filename;
 	std::ifstream file(filename);
+	if (!file.is_open()) throw std::exception("File corrupted or didn't find");
 	file >> this->j;
 	this->isDbLoaded = true;
 }

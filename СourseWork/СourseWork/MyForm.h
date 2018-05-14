@@ -65,6 +65,23 @@ namespace ÑourseWork {
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::TextBox^  textBox10;
 	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
+	private: System::Windows::Forms::GroupBox^  groupBox2;
+	private: System::Windows::Forms::DataGridView^  dataGridView1;
+
+
+
+
+	private: System::Windows::Forms::Button^  button4;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column4;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Ñ÷åò;
+
+
+
+
+
 	protected:
 
 	private:
@@ -104,7 +121,17 @@ namespace ÑourseWork {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Ñ÷åò = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->groupBox1->SuspendLayout();
+			this->groupBox2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -313,7 +340,7 @@ namespace ÑourseWork {
 			// 
 			// textBox10
 			// 
-			this->textBox10->Location = System::Drawing::Point(12, 294);
+			this->textBox10->Location = System::Drawing::Point(12, 358);
 			this->textBox10->Multiline = true;
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->ReadOnly = true;
@@ -324,23 +351,93 @@ namespace ÑourseWork {
 			// dateTimePicker1
 			// 
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Short;
-			this->dateTimePicker1->Location = System::Drawing::Point(13, 188);
+			this->dateTimePicker1->Location = System::Drawing::Point(6, 138);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(83, 20);
 			this->dateTimePicker1->TabIndex = 10;
+			// 
+			// groupBox2
+			// 
+			this->groupBox2->Controls->Add(this->button4);
+			this->groupBox2->Controls->Add(this->dateTimePicker1);
+			this->groupBox2->Controls->Add(this->dataGridView1);
+			this->groupBox2->Location = System::Drawing::Point(12, 188);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Size = System::Drawing::Size(389, 164);
+			this->groupBox2->TabIndex = 11;
+			this->groupBox2->TabStop = false;
+			this->groupBox2->Text = L"Send values";
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(308, 135);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(75, 23);
+			this->button4->TabIndex = 1;
+			this->button4->Text = L"Îòïðàâèòü";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToDeleteRows = false;
+			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonFace;
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+				this->Column1,
+					this->Column2, this->Column3, this->Column4, this->Ñ÷åò
+			});
+			this->dataGridView1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->dataGridView1->Location = System::Drawing::Point(3, 16);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(383, 113);
+			this->dataGridView1->TabIndex = 0;
+			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"Âèä óñëóãè";
+			this->Column1->Name = L"Column1";
+			this->Column1->ReadOnly = true;
+			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"Òàðèô";
+			this->Column2->Name = L"Column2";
+			this->Column2->ReadOnly = true;
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"Íîðìàòèâ";
+			this->Column3->Name = L"Column3";
+			this->Column3->ReadOnly = true;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Ïîêàçàíèÿ";
+			this->Column4->Name = L"Column4";
+			// 
+			// Ñ÷åò
+			// 
+			this->Ñ÷åò->HeaderText = L"Ñ÷åò";
+			this->Ñ÷åò->Name = L"Ñ÷åò";
+			this->Ñ÷åò->ReadOnly = true;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(413, 359);
-			this->Controls->Add(this->dateTimePicker1);
+			this->ClientSize = System::Drawing::Size(413, 423);
+			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->textBox10);
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
+			this->groupBox2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -363,13 +460,29 @@ namespace ÑourseWork {
 	}
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 		textBox10->Text += dateTimePicker1->Value.ToString() + "\r\n";
-		textBox10->Text += dateTimePicker1->Value.ToString() + "\r\n";
-		acc.connectToDb("database.json");
 
 		try {
-			acc.login(toString(textBox1->Text), toString(textBox2->Text));
-			textBox10->Text += "Logged in: " + acc.tn.intro() + " account\r\n";
-		}
+			try {
+				acc.connectToDb("database.json");
+			}
+			catch (json::exception e) {
+				textBox10->Text += toFormString(e.what()) + "\r\n";
+			}
+			catch (std::exception e) {
+				textBox10->Text += toFormString(e.what()) + "\r\n";
+				throw std::exception("File database.json can't be opened");
+			}
+				acc.login(toString(textBox1->Text), toString(textBox2->Text));
+				textBox10->Text += "Logged in: " + acc.tn.intro() + " account\r\n";
+
+				dataGridView1->Rows->Clear();
+				for (auto i : acc.tn.getNeedToPay()) {
+					auto temp = acc.db.j["payment"].at(i);
+					dataGridView1->Rows->Add(toFormString(i),
+						toFormString(std::to_string((double)temp["tariffe"])),
+						toFormString(std::to_string((double)temp["normal"])));
+				}
+			}
 		catch (json::exception e) {
 			textBox10->Text += toFormString(e.what()) + "\r\n";
 		}
@@ -382,6 +495,37 @@ namespace ÑourseWork {
 		acc.db.deleteUser(acc.db.getUser(toString(textBox1->Text), toString(textBox2->Text)));
 		acc.db.save();
 		textBox10->Text += "Account is deleted from " + toFormString(acc.db.filename) + "\r\n";
+	}
+	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (acc.tn.j == NULL)
+			return;
+
+		std::vector<std::vector<std::string>> total;
+
+		try {
+			for (int i = 0; i < dataGridView1->Rows->Count; i++) {
+				double converted = System::Convert::ToDouble(dataGridView1->Rows[i]->Cells[3]->Value->ToString()->Replace(".", ","));
+
+				if (converted < 0) throw std::exception("The meter reading can't be less 0");
+				std::vector<std::string> temp;
+
+				temp.push_back(toString(dataGridView1->Rows[0]->Cells[0]->Value->ToString()));
+				temp.push_back(toString(dataGridView1->Rows[0]->Cells[1]->Value->ToString()));
+				temp.push_back(toString(dataGridView1->Rows[0]->Cells[2]->Value->ToString()));
+				temp.push_back(toString(dataGridView1->Rows[0]->Cells[3]->Value->ToString()));
+
+				total.push_back(temp);
+
+				//acc.sendToLandlord(total);
+			}
+		}
+		catch (System::FormatException^ e) {
+			textBox10->Text += "One or few fields don't filled by doubles\r\n" + e->Message + "\r\n";
+		}
+		catch (std::exception e) {
+			textBox10->Text += toFormString(e.what()) + "\r\n";
+		}
+		//textBox10->Text += field1.ToString() + "\r\n";
 	}
 };
 }
