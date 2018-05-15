@@ -1,5 +1,5 @@
 #include "Account.h"
-#include "Database.h"
+//#include "Database.h"
 
 Account::Account() {
 
@@ -13,7 +13,9 @@ void Account::connectToDb(std::string path) {
 }
 
 void Account::login(std::string login, std::string password) {
-	this->tn = this->db.getUser(login, password);
+	/*this->ll = this->db.getAdminUser(login, password);
+	if (!this->ll.adminMode)*/
+		this->tn = this->db.getUser(login, password);
 }
 
 void Account::regist(std::string login, std::string password, std::string name, std::string surname,
@@ -68,4 +70,12 @@ void Account::regist(std::string login, std::string password, std::string name, 
 
 	this->db.addUserToDb(temp);
 	this->tn = this->db.getUser(login, password);
+}
+
+std::vector<double> Account::sendMeters(std::vector<std::vector<std::string>> map,
+										std::vector<std::vector<double>> numbers, Tenant tn, json payment) {
+	return this->ll.getBill(map, numbers, tn, payment);
+	// bill = tariff * pokazaniya
+	// pok == 0 -> bill = norm * living people * tariff
+	// type == f -> bill = area * tariff
 }

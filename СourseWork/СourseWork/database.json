@@ -7,7 +7,9 @@
             },
             "privacy": {
                 "name": "Ivan",
-                "surname": "Ivanov"
+                "surname": "Ivanov",
+                "living people": 3,
+                "area": 70
             },
             "pays": {
                 "needToPay": ["water", "gas"]
@@ -20,21 +22,43 @@
             },
             "privacy": {
                 "name": "Petr",
-                "surname": "Petrov"
+                "surname": "Petrov",
+                "living people": 5,
+                "area": 20
             },
             "pays": {
-                "needToPay": ["water"]
+                "needToPay": ["water", "renovation"]
+            }
+        },
+        {
+            "auth": {
+                "login": "admin",
+                "password": "admin",
+                "isAdmin": 0
+            },
+            "privacy": {
+                "name": "Sasha",
+                "surname": "Ponev"
+            },
+            "pays": {
+                "needToPay": []
             }
         }
     ],
     "payment": {
         "water": {
-            "normal": 10,
-            "tariffe": 3
+            "norm": 10,
+            "tariff": 3,
+            "type": "meter"
         },
         "gas": {
-            "normal": 5,
-            "tariffe": 5
+            "norm": 5,
+            "tariff": 5,
+            "type": "meter"
+        },
+        "renovation": {
+            "tariff": 5,
+            "type": "footage"
         }
     }
 }

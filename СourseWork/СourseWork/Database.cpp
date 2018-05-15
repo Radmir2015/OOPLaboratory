@@ -21,8 +21,14 @@ void Database::save(std::string filename) {
 
 Tenant Database::getUser(std::string login, std::string password) {
 	for (auto& i : j["users"]) {
-		if (i["auth"]["login"] == login && i["auth"]["password"] == password)
+		if (i["auth"]["login"] == login && i["auth"]["password"] == password) {
+			if (i["auth"].find("isAdmin") != i["auth"].end()) {
+				Tenant tmp = Tenant(&i);
+				tmp.isAdminMode = true;
+				return tmp;
+			}
 			return Tenant(&i);
+		}
 	}
 
 	/*for (int i = 0; i < j["users"].size(); i++) {
@@ -34,6 +40,16 @@ Tenant Database::getUser(std::string login, std::string password) {
 
 	//return Tenant();
 }
+
+//Landlord Database::getAdminUser(std::string login, std::string password) {
+//	for (auto& i : j["users"]) {
+//		if (i["auth"]["login"] == login && i["auth"]["password"] == password &&
+//			i.at("auth").find("isAdmin") != i.at("auth").end())
+//			return Landlord(&i);
+//	}
+//
+//	throw std::exception("User isn't found...");
+//}
 
 void Database::addUserToDb(Tenant tn) {
 	if (*(tn.j) != 0)

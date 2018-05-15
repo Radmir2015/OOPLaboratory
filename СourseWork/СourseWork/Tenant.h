@@ -22,4 +22,5 @@ class Tenant {
 		std::string name = "", surname = "";
 		json* j;
 		json ghost;
+		bool isAdminMode = false;
 };

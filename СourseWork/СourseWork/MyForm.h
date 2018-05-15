@@ -75,8 +75,14 @@ namespace ÑourseWork {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column6;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column4;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Ñ÷åò;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column5;
+
+
+
+
+
 
 
 
@@ -127,8 +133,9 @@ namespace ÑourseWork {
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Ñ÷åò = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -136,7 +143,7 @@ namespace ÑourseWork {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(275, 111);
+			this->button1->Location = System::Drawing::Point(352, 111);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(100, 23);
 			this->button1->TabIndex = 0;
@@ -195,7 +202,7 @@ namespace ÑourseWork {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(275, 138);
+			this->button3->Location = System::Drawing::Point(352, 138);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(100, 23);
 			this->button3->TabIndex = 7;
@@ -228,7 +235,7 @@ namespace ÑourseWork {
 			this->groupBox1->Controls->Add(this->button2);
 			this->groupBox1->Location = System::Drawing::Point(12, 12);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(388, 169);
+			this->groupBox1->Size = System::Drawing::Size(460, 169);
 			this->groupBox1->TabIndex = 8;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Register/Login";
@@ -236,7 +243,7 @@ namespace ÑourseWork {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(217, 88);
+			this->label9->Location = System::Drawing::Point(294, 88);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(50, 13);
 			this->label9->TabIndex = 20;
@@ -244,7 +251,7 @@ namespace ÑourseWork {
 			// 
 			// textBox9
 			// 
-			this->textBox9->Location = System::Drawing::Point(275, 85);
+			this->textBox9->Location = System::Drawing::Point(352, 85);
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(102, 20);
 			this->textBox9->TabIndex = 19;
@@ -252,7 +259,7 @@ namespace ÑourseWork {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(196, 66);
+			this->label8->Location = System::Drawing::Point(273, 66);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(73, 13);
 			this->label8->TabIndex = 18;
@@ -260,7 +267,7 @@ namespace ÑourseWork {
 			// 
 			// textBox8
 			// 
-			this->textBox8->Location = System::Drawing::Point(275, 63);
+			this->textBox8->Location = System::Drawing::Point(352, 63);
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(102, 20);
 			this->textBox8->TabIndex = 17;
@@ -268,7 +275,7 @@ namespace ÑourseWork {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(207, 44);
+			this->label7->Location = System::Drawing::Point(284, 44);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(62, 13);
 			this->label7->TabIndex = 16;
@@ -276,7 +283,7 @@ namespace ÑourseWork {
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(275, 41);
+			this->textBox7->Location = System::Drawing::Point(352, 41);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(102, 20);
 			this->textBox7->TabIndex = 15;
@@ -300,7 +307,7 @@ namespace ÑourseWork {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(209, 22);
+			this->label6->Location = System::Drawing::Point(286, 22);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(60, 13);
 			this->label6->TabIndex = 12;
@@ -308,7 +315,7 @@ namespace ÑourseWork {
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(275, 19);
+			this->textBox6->Location = System::Drawing::Point(352, 19);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(102, 20);
 			this->textBox6->TabIndex = 11;
@@ -344,7 +351,7 @@ namespace ÑourseWork {
 			this->textBox10->Multiline = true;
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->ReadOnly = true;
-			this->textBox10->Size = System::Drawing::Size(388, 53);
+			this->textBox10->Size = System::Drawing::Size(460, 53);
 			this->textBox10->TabIndex = 9;
 			this->textBox10->Text = L"Status:\r\n";
 			// 
@@ -363,14 +370,14 @@ namespace ÑourseWork {
 			this->groupBox2->Controls->Add(this->dataGridView1);
 			this->groupBox2->Location = System::Drawing::Point(12, 188);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(389, 164);
+			this->groupBox2->Size = System::Drawing::Size(460, 164);
 			this->groupBox2->TabIndex = 11;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Send values";
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(308, 135);
+			this->button4->Location = System::Drawing::Point(382, 135);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(75, 23);
 			this->button4->TabIndex = 1;
@@ -385,50 +392,62 @@ namespace ÑourseWork {
 			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonFace;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
 				this->Column1,
-					this->Column2, this->Column3, this->Column4, this->Ñ÷åò
+					this->Column2, this->Column3, this->Column6, this->Column4, this->Column5
 			});
 			this->dataGridView1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->dataGridView1->Location = System::Drawing::Point(3, 16);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(383, 113);
+			this->dataGridView1->Size = System::Drawing::Size(454, 113);
 			this->dataGridView1->TabIndex = 0;
 			// 
 			// Column1
 			// 
+			this->Column1->FillWeight = 107.8173F;
 			this->Column1->HeaderText = L"Âèä óñëóãè";
 			this->Column1->Name = L"Column1";
 			this->Column1->ReadOnly = true;
 			// 
 			// Column2
 			// 
+			this->Column2->FillWeight = 107.8173F;
 			this->Column2->HeaderText = L"Òàðèô";
 			this->Column2->Name = L"Column2";
 			this->Column2->ReadOnly = true;
 			// 
 			// Column3
 			// 
+			this->Column3->FillWeight = 107.8173F;
 			this->Column3->HeaderText = L"Íîðìàòèâ";
 			this->Column3->Name = L"Column3";
 			this->Column3->ReadOnly = true;
 			// 
+			// Column6
+			// 
+			this->Column6->FillWeight = 60.9137F;
+			this->Column6->HeaderText = L"Òèï";
+			this->Column6->Name = L"Column6";
+			this->Column6->ReadOnly = true;
+			// 
 			// Column4
 			// 
+			this->Column4->FillWeight = 107.8173F;
 			this->Column4->HeaderText = L"Ïîêàçàíèÿ";
 			this->Column4->Name = L"Column4";
 			// 
-			// Ñ÷åò
+			// Column5
 			// 
-			this->Ñ÷åò->HeaderText = L"Ñ÷åò";
-			this->Ñ÷åò->Name = L"Ñ÷åò";
-			this->Ñ÷åò->ReadOnly = true;
+			this->Column5->FillWeight = 107.8173F;
+			this->Column5->HeaderText = L"Ñ÷åò";
+			this->Column5->Name = L"Column5";
+			this->Column5->ReadOnly = true;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(413, 423);
+			this->ClientSize = System::Drawing::Size(484, 423);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->textBox10);
 			this->Controls->Add(this->groupBox1);
@@ -474,13 +493,44 @@ namespace ÑourseWork {
 			}
 				acc.login(toString(textBox1->Text), toString(textBox2->Text));
 				textBox10->Text += "Logged in: " + acc.tn.intro() + " account\r\n";
+				textBox10->Text += acc.tn.isAdminMode + "\r\n";
 
 				dataGridView1->Rows->Clear();
-				for (auto i : acc.tn.getNeedToPay()) {
-					auto temp = acc.db.j["payment"].at(i);
-					dataGridView1->Rows->Add(toFormString(i),
-						toFormString(std::to_string((double)temp["tariffe"])),
-						toFormString(std::to_string((double)temp["normal"])));
+
+				if (acc.tn.isAdminMode) {
+					for (int i = 0; i < dataGridView1->Columns->Count - 2; i++)
+						dataGridView1->Columns[i]->ReadOnly = false;
+					for (int i = dataGridView1->Columns->Count - 2; i < dataGridView1->Columns->Count - 1; i++)
+						dataGridView1->Columns[i]->ReadOnly = true;
+
+					for (auto i : acc.db.j["payment"]) {
+						dataGridView1->Rows->Add(toFormString("123"),
+							i.find("tariff") != i.end()
+							? toFormString(std::to_string((double)i["tariff"]))
+							: "-",
+							i.find("norm") != i.end()
+							? toFormString(std::to_string((double)i["norm"]))
+							: "-",
+							toFormString(i["type"]));
+					}
+				}
+				else {
+					for (int i = 0; i < dataGridView1->Columns->Count - 2; i++)
+						dataGridView1->Columns[i]->ReadOnly = true;
+					for (int i = dataGridView1->Columns->Count - 2; i < dataGridView1->Columns->Count - 1; i++)
+						dataGridView1->Columns[i]->ReadOnly = false;
+
+					for (auto i : acc.tn.getNeedToPay()) {
+						auto temp = acc.db.j["payment"].at(i);
+						dataGridView1->Rows->Add(toFormString(i),
+							temp.find("tariff") != temp.end()
+							? toFormString(std::to_string((double)temp["tariff"]))
+							: "-",
+							temp.find("norm") != temp.end()
+							? toFormString(std::to_string((double)temp["norm"]))
+							: "-",
+							toFormString(temp["type"]));
+					}
 				}
 			}
 		catch (json::exception e) {
@@ -501,31 +551,56 @@ namespace ÑourseWork {
 			return;
 
 		std::vector<std::vector<std::string>> total;
+		std::vector<std::vector<double>> numbers;
 
 		try {
 			for (int i = 0; i < dataGridView1->Rows->Count; i++) {
-				double converted = System::Convert::ToDouble(dataGridView1->Rows[i]->Cells[3]->Value->ToString()->Replace(".", ","));
+				double converted = System::Convert::ToDouble(dataGridView1->Rows[i]->Cells[4]->Value->ToString()->Replace(".", ","));
 
 				if (converted < 0) throw std::exception("The meter reading can't be less 0");
 				std::vector<std::string> temp;
+				std::vector<double> nums;
 
-				temp.push_back(toString(dataGridView1->Rows[0]->Cells[0]->Value->ToString()));
-				temp.push_back(toString(dataGridView1->Rows[0]->Cells[1]->Value->ToString()));
-				temp.push_back(toString(dataGridView1->Rows[0]->Cells[2]->Value->ToString()));
-				temp.push_back(toString(dataGridView1->Rows[0]->Cells[3]->Value->ToString()));
+				for (int j = 0; j < dataGridView1->Rows[i]->Cells->Count - 1; j++) {
+					temp.push_back(toString(dataGridView1->Rows[i]->Cells[j]->Value->ToString()));
+					/*temp.push_back(toString(dataGridView1->Rows[i]->Cells[1]->Value->ToString()));
+					temp.push_back(toString(dataGridView1->Rows[i]->Cells[2]->Value->ToString()));
+					temp.push_back(toString(dataGridView1->Rows[i]->Cells[3]->Value->ToString()));
+					temp.push_back(toString(dataGridView1->Rows[i]->Cells[4]->Value->ToString()));*/
 
+					try {
+						double num = System::Convert::ToDouble(dataGridView1->Rows[i]->Cells[j]->Value->ToString()->Replace(".", ","));
+						nums.push_back(num);
+					}
+					catch (System::FormatException^ e) {
+						nums.push_back(NULL);
+					}
+					//nums.push_back(NULL);
+					//nums.push_back();
+					//nums.push_back(System::Convert::ToDouble(dataGridView1->Rows[i]->Cells[2]->Value->ToString()->Replace(".", ",")));
+					//nums.push_back(NULL);
+					////nums.push_back(System::Convert::ToDouble(dataGridView1->Rows[i]->Cells[3]->Value->ToString()->Replace(".", ",")));
+					//nums.push_back(System::Convert::ToDouble(dataGridView1->Rows[i]->Cells[4]->Value->ToString()->Replace(".", ",")));
+				}
 				total.push_back(temp);
-
-				//acc.sendToLandlord(total);
+				numbers.push_back(nums);
 			}
+			auto pays = acc.sendMeters(total, numbers, acc.tn, acc.db.j["payment"]);
+
+			for (int i = 0; i < pays.size(); i++)
+				dataGridView1->Rows[i]->Cells[5]->Value = pays[i];
+
+			textBox10->Text += "Successfully sended meters\r\n";
 		}
-		catch (System::FormatException^ e) {
+		/*catch (System::FormatException^ e) {
 			textBox10->Text += "One or few fields don't filled by doubles\r\n" + e->Message + "\r\n";
+		}*/
+		catch (System::NullReferenceException^ e) {
+			textBox10->Text += "One or few fields don't filled\r\n" + e->Message + "\r\n";
 		}
-		catch (std::exception e) {
+		/*catch (std::exception e) {
 			textBox10->Text += toFormString(e.what()) + "\r\n";
-		}
-		//textBox10->Text += field1.ToString() + "\r\n";
+		}*/
 	}
 };
 }

@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Tenant.h"
+//#include "Tenant.h"
+#include "Landlord.h"
 
 #include <fstream>
 
@@ -15,6 +16,7 @@ class Database {
 		void addUserToDb(Tenant tn);
 		void deleteUser(Tenant tn);
 		Tenant getUser(std::string login, std::string password);
+		//Landlord getAdminUser(std::string login, std::string password);
 		//Tenant createUser(std::string login, std::string password, std::string money);
 		json j;
 		
