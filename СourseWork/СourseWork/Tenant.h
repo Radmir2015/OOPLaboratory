@@ -20,7 +20,11 @@ class Tenant {
 		System::String^ intro();
 		System::String^ test();
 		std::string name = "", surname = "";
+		bool isAdminMode = false;
+
+		json* getJ();
+		json& getGhost();
+	private:
 		json* j;
 		json ghost;
-		bool isAdminMode = false;
 };

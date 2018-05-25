@@ -22,6 +22,14 @@ Tenant::Tenant(std::string name, std::string surname) {
 	this->surname = surname;
 }
 
+json* Tenant::getJ() {
+	return this->j;
+}
+
+json& Tenant::getGhost() {
+	return this->ghost;
+}
+
 void Tenant::addIntoJson(std::string path, std::string key) {
 	(*j).at("privacy")[path] = key;
 }

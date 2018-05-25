@@ -18,6 +18,12 @@ class Account {
 			std::string address, unsigned int area, unsigned int people, std::string facilities);
 		std::vector<double> sendMeters(std::vector<std::vector<std::string>> map,
 			std::vector<std::vector<double>> numbers, Tenant tn, json payment);
+		void sendPay(std::vector<std::vector<std::string>> map,
+			std::vector<std::vector<double>> numbers, Tenant tn, int unixtime);
+		Tenant& getTn();
+		Landlord& getLl();
+		Database& getDb();
+	private:
 		Tenant tn;
 		Landlord ll;
 		Database db;

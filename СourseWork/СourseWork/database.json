@@ -1,56 +1,5 @@
 {
-    "users": [
-        {
-            "auth": {
-                "login": "123",
-                "password": "234"
-            },
-            "privacy": {
-                "name": "Ivan",
-                "surname": "Ivanov",
-                "living people": 3,
-                "area": 70
-            },
-            "pays": {
-                "needToPay": ["water", "gas"]
-            }
-        },
-        {
-            "auth": {
-                "login": "234",
-                "password": "345"
-            },
-            "privacy": {
-                "name": "Petr",
-                "surname": "Petrov",
-                "living people": 5,
-                "area": 20
-            },
-            "pays": {
-                "needToPay": ["water", "renovation"]
-            }
-        },
-        {
-            "auth": {
-                "login": "admin",
-                "password": "admin",
-                "isAdmin": 0
-            },
-            "privacy": {
-                "name": "Sasha",
-                "surname": "Ponev"
-            },
-            "pays": {
-                "needToPay": []
-            }
-        }
-    ],
     "payment": {
-        "water": {
-            "norm": 10,
-            "tariff": 3,
-            "type": "meter"
-        },
         "gas": {
             "norm": 5,
             "tariff": 5,
@@ -59,6 +8,63 @@
         "renovation": {
             "tariff": 5,
             "type": "footage"
+        },
+        "water": {
+            "norm": 10,
+            "tariff": 3,
+            "type": "meter"
         }
-    }
+    },
+    "users": [
+        {
+            "auth": {
+                "login": "123",
+                "password": "234"
+            },
+            "pays": {
+                "needToPay": [
+                    "water",
+                    "gas"
+                ]
+            },
+            "privacy": {
+                "area": 70,
+                "living people": 3,
+                "name": "Ivan",
+                "surname": "Ivanov"
+            }
+        },
+        {
+            "auth": {
+                "login": "234",
+                "password": "345"
+            },
+            "pays": {
+                "needToPay": [
+                    "water",
+                    "renovation"
+                ]
+            },
+            "privacy": {
+                "area": 20,
+                "living people": 5,
+                "name": "Petr",
+                "surname": "Petrov"
+            }
+        },
+        {
+            "auth": {
+                "isAdmin": 0,
+                "login": "admin",
+                "password": "admin"
+            },
+            "pays": {
+                "needToPay": ["gas", "renovation", "water"]
+            },
+            "privacy": {
+                "name": "Sasha",
+                "surname": "Ponev"
+            }
+        }
+    ]
 }

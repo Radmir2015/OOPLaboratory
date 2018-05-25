@@ -19,6 +19,10 @@ void Database::save(std::string filename) {
 	file << std::setw(4) << this->j << std::endl;
 }
 
+json& Database::getJ() {
+	return this->j;
+}
+
 Tenant Database::getUser(std::string login, std::string password) {
 	for (auto& i : j["users"]) {
 		if (i["auth"]["login"] == login && i["auth"]["password"] == password) {
@@ -52,16 +56,16 @@ Tenant Database::getUser(std::string login, std::string password) {
 //}
 
 void Database::addUserToDb(Tenant tn) {
-	if (*(tn.j) != 0)
-		this->j["users"].push_back(*(tn.j));
+	if (*(tn.getJ()) != 0)
+		this->j["users"].push_back(*(tn.getJ()));
 	else
-		this->j["users"].push_back(tn.ghost);
+		this->j["users"].push_back(tn.getGhost());
 }
 
 void Database::deleteUser(Tenant tn) {
 	int index = -1;
 	for (int i = 0; i < this->j["users"].size(); i++)
-		if (this->j["users"][i] == *(tn.j)) {
+		if (this->j["users"][i] == *(tn.getJ())) {
 			index = i;
 			break;
 		}

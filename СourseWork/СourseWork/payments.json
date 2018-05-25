@@ -1,0 +1,46 @@
+[
+    {
+        "check": "69",
+        "login": "123",
+        "meters": "23",
+        "norm": "10.000000",
+        "payments": "water",
+        "sendor": "Ivan Ivanov",
+        "tariff": "3.000000",
+        "type": "meter",
+        "unixtime": 1527218007
+    },
+    {
+        "check": "65",
+        "login": "123",
+        "meters": "13",
+        "norm": "5.000000",
+        "payments": "gas",
+        "sendor": "Ivan Ivanov",
+        "tariff": "5.000000",
+        "type": "meter",
+        "unixtime": 1527218007
+    },
+    {
+        "check": "69",
+        "login": "123",
+        "meters": "23",
+        "norm": "10.000000",
+        "payments": "water",
+        "sendor": "Ivan Ivanov",
+        "tariff": "3.000000",
+        "type": "meter",
+        "unixtime": 1527822807
+    },
+    {
+        "check": "65",
+        "login": "123",
+        "meters": "13",
+        "norm": "5.000000",
+        "payments": "gas",
+        "sendor": "Ivan Ivanov",
+        "tariff": "5.000000",
+        "type": "meter",
+        "unixtime": 1527822807
+    }
+]

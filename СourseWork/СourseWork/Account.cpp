@@ -5,6 +5,18 @@ Account::Account() {
 
 }
 
+Tenant& Account::getTn() {
+	return this->tn;
+}
+
+Landlord& Account::getLl() {
+	return this->ll;
+}
+
+Database& Account::getDb() {
+	return this->db;
+}
+
 void Account::connectToDb(std::string path) {
 	if (!this->db.isDbLoaded || path != this->db.filename) {
 		Database db(path);
@@ -78,4 +90,9 @@ std::vector<double> Account::sendMeters(std::vector<std::vector<std::string>> ma
 	// bill = tariff * pokazaniya
 	// pok == 0 -> bill = norm * living people * tariff
 	// type == f -> bill = area * tariff
+}
+
+void Account::sendPay(std::vector<std::vector<std::string>> map,
+	std::vector<std::vector<double>> numbers, Tenant tn, int unixtime) {
+	this->ll.acceptPay(map, numbers, tn, unixtime);
 }
