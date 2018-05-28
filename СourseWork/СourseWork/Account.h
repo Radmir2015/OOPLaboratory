@@ -1,6 +1,8 @@
 #pragma once
 
 #include <string>
+#include <set>
+#include <algorithm>
 //#include "Tenant.h"
 //#include "Landlord.h"
 #include "Database.h"
@@ -15,7 +17,8 @@ class Account {
 		void login(std::string login, std::string password);
 		void regist(std::string login, std::string password,
 			std::string name, std::string surname, std::string father,
-			std::string address, unsigned int area, unsigned int people, std::string facilities);
+			std::string address, unsigned int area, unsigned int people,
+			std::vector<std::string> facilities);
 		std::vector<double> sendMeters(std::vector<std::vector<std::string>> map,
 			std::vector<std::vector<double>> numbers, Tenant tn, json payment);
 		void sendPay(std::vector<std::vector<std::string>> map,

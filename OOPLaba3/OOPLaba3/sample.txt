@@ -1,0 +1,3 @@
+12345 Ivanov Ivan Ivanovich Moscow pr. Stroiteley, d. 15
+23451 Petrov Petr Petrovich Samara ul. Lenina, d. 1
+34214 Sergeyev Sergey Sergeyevich Penza ul. Vologarskogo, d. 20

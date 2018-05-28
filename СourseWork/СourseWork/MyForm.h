@@ -23,6 +23,9 @@ namespace CourseWork {
 
 	CurrentTime currentTime;
 
+	bool isLogin = false;
+	bool isCodeClick = false;
+
 	/// <summary>
 	/// Сводка для MyForm
 	/// </summary>
@@ -58,7 +61,7 @@ namespace CourseWork {
 	private: System::Windows::Forms::Button^  button3;
 	private: System::Windows::Forms::GroupBox^  groupBox1;
 	private: System::Windows::Forms::Label^  label9;
-	private: System::Windows::Forms::TextBox^  textBox9;
+
 	private: System::Windows::Forms::Label^  label8;
 	private: System::Windows::Forms::TextBox^  textBox8;
 	private: System::Windows::Forms::Label^  label7;
@@ -86,6 +89,17 @@ namespace CourseWork {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column4;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column5;
 	private: System::Windows::Forms::Button^  button5;
+	private: System::Windows::Forms::Button^  button6;
+	private: System::Windows::Forms::Button^  button7;
+	private: System::Windows::Forms::CheckedListBox^  checkedListBox1;
+	private: System::Windows::Forms::GroupBox^  groupBox3;
+	private: System::Windows::Forms::DataGridView^  dataGridView2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column7;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column8;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column9;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column10;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column11;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column12;
 
 
 
@@ -120,8 +134,9 @@ namespace CourseWork {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->checkedListBox1 = (gcnew System::Windows::Forms::CheckedListBox());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
@@ -136,6 +151,7 @@ namespace CourseWork {
 			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -145,16 +161,26 @@ namespace CourseWork {
 			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column11 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column12 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->groupBox3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(352, 111);
+			this->button1->Location = System::Drawing::Point(6, 68);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(100, 23);
+			this->button1->Size = System::Drawing::Size(78, 21);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Register";
 			this->button1->UseVisualStyleBackColor = true;
@@ -185,7 +211,7 @@ namespace CourseWork {
 			// 
 			this->button2->Location = System::Drawing::Point(90, 68);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(100, 21);
+			this->button2->Size = System::Drawing::Size(102, 21);
 			this->button2->TabIndex = 4;
 			this->button2->Text = L"Login";
 			this->button2->UseVisualStyleBackColor = true;
@@ -211,7 +237,7 @@ namespace CourseWork {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(352, 138);
+			this->button3->Location = System::Drawing::Point(246, 138);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(100, 23);
 			this->button3->TabIndex = 7;
@@ -221,8 +247,9 @@ namespace CourseWork {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->checkedListBox1);
+			this->groupBox1->Controls->Add(this->button7);
 			this->groupBox1->Controls->Add(this->label9);
-			this->groupBox1->Controls->Add(this->textBox9);
 			this->groupBox1->Controls->Add(this->label8);
 			this->groupBox1->Controls->Add(this->textBox8);
 			this->groupBox1->Controls->Add(this->label7);
@@ -249,6 +276,25 @@ namespace CourseWork {
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Register/Login";
 			// 
+			// checkedListBox1
+			// 
+			this->checkedListBox1->FormattingEnabled = true;
+			this->checkedListBox1->Location = System::Drawing::Point(352, 84);
+			this->checkedListBox1->Name = L"checkedListBox1";
+			this->checkedListBox1->Size = System::Drawing::Size(102, 79);
+			this->checkedListBox1->TabIndex = 22;
+			this->checkedListBox1->ItemCheck += gcnew System::Windows::Forms::ItemCheckEventHandler(this, &MyForm::checkedListBox1_ItemCheck);
+			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(246, 111);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(98, 23);
+			this->button7->TabIndex = 21;
+			this->button7->Text = L"Logout";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
+			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
@@ -257,13 +303,6 @@ namespace CourseWork {
 			this->label9->Size = System::Drawing::Size(50, 13);
 			this->label9->TabIndex = 20;
 			this->label9->Text = L"Facilities:";
-			// 
-			// textBox9
-			// 
-			this->textBox9->Location = System::Drawing::Point(352, 85);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(102, 20);
-			this->textBox9->TabIndex = 19;
 			// 
 			// label8
 			// 
@@ -356,7 +395,7 @@ namespace CourseWork {
 			// 
 			// textBox10
 			// 
-			this->textBox10->Location = System::Drawing::Point(12, 358);
+			this->textBox10->Location = System::Drawing::Point(12, 464);
 			this->textBox10->Multiline = true;
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->ReadOnly = true;
@@ -375,20 +414,32 @@ namespace CourseWork {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->button6);
 			this->groupBox2->Controls->Add(this->button5);
 			this->groupBox2->Controls->Add(this->button4);
 			this->groupBox2->Controls->Add(this->dateTimePicker1);
 			this->groupBox2->Controls->Add(this->dataGridView1);
-			this->groupBox2->Location = System::Drawing::Point(12, 188);
+			this->groupBox2->Location = System::Drawing::Point(12, 182);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Size = System::Drawing::Size(460, 164);
 			this->groupBox2->TabIndex = 11;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Send values";
 			// 
+			// button6
+			// 
+			this->button6->Enabled = false;
+			this->button6->Location = System::Drawing::Point(217, 135);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(75, 23);
+			this->button6->TabIndex = 12;
+			this->button6->Text = L"Save";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
+			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(297, 135);
+			this->button5->Location = System::Drawing::Point(379, 135);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(75, 23);
 			this->button5->TabIndex = 11;
@@ -398,7 +449,7 @@ namespace CourseWork {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(382, 135);
+			this->button4->Location = System::Drawing::Point(298, 135);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(75, 23);
 			this->button4->TabIndex = 1;
@@ -464,11 +515,69 @@ namespace CourseWork {
 			this->Column5->Name = L"Column5";
 			this->Column5->ReadOnly = true;
 			// 
+			// groupBox3
+			// 
+			this->groupBox3->Controls->Add(this->dataGridView2);
+			this->groupBox3->Location = System::Drawing::Point(12, 346);
+			this->groupBox3->Name = L"groupBox3";
+			this->groupBox3->Size = System::Drawing::Size(460, 112);
+			this->groupBox3->TabIndex = 12;
+			this->groupBox3->TabStop = false;
+			this->groupBox3->Text = L"Payments";
+			// 
+			// dataGridView2
+			// 
+			this->dataGridView2->AllowUserToAddRows = false;
+			this->dataGridView2->AllowUserToDeleteRows = false;
+			this->dataGridView2->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGridView2->BackgroundColor = System::Drawing::SystemColors::ButtonFace;
+			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
+				this->Column7,
+					this->Column8, this->Column9, this->Column10, this->Column11, this->Column12
+			});
+			this->dataGridView2->Dock = System::Windows::Forms::DockStyle::Top;
+			this->dataGridView2->Location = System::Drawing::Point(3, 16);
+			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->Size = System::Drawing::Size(454, 87);
+			this->dataGridView2->TabIndex = 0;
+			// 
+			// Column7
+			// 
+			this->Column7->HeaderText = L"Login";
+			this->Column7->Name = L"Column7";
+			// 
+			// Column8
+			// 
+			this->Column8->HeaderText = L"Sender";
+			this->Column8->Name = L"Column8";
+			// 
+			// Column9
+			// 
+			this->Column9->HeaderText = L"Service";
+			this->Column9->Name = L"Column9";
+			// 
+			// Column10
+			// 
+			this->Column10->HeaderText = L"Meter";
+			this->Column10->Name = L"Column10";
+			// 
+			// Column11
+			// 
+			this->Column11->HeaderText = L"Check";
+			this->Column11->Name = L"Column11";
+			// 
+			// Column12
+			// 
+			this->Column12->HeaderText = L"Date";
+			this->Column12->Name = L"Column12";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(484, 423);
+			this->ClientSize = System::Drawing::Size(484, 529);
+			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->textBox10);
 			this->Controls->Add(this->groupBox1);
@@ -479,28 +588,56 @@ namespace CourseWork {
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->groupBox3->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		acc.connectToDb("database.json");
+		try {
+			acc.connectToDb("database.json");
 
-		if (textBox7->Text == "") textBox7->Text = "0";
-		if (textBox8->Text == "") textBox8->Text = "0";
+			if (textBox7->Text == "") textBox7->Text = "0";
+			if (textBox8->Text == "") textBox8->Text = "0";
 
-		acc.regist(toString(textBox1->Text), toString(textBox2->Text), toString(textBox3->Text),
-		toString(textBox4->Text), toString(textBox5->Text), toString(textBox6->Text),
-		toInt(textBox7->Text), toInt(textBox8->Text), toString(textBox9->Text));
+			isCodeClick = true;
 
-		textBox10->Text = "Successfully registered: " + acc.getTn().intro() + "\r\n" + textBox10->Text;
+			for (int j = 0; j < checkedListBox1->Items->Count; j++)
+				checkedListBox1->SetItemChecked(j, false);
 
-		//acc.tn.addIntoJson("money", "1300$");
-		acc.getDb().save("database.json");
+			isCodeClick = false;
+
+			dataGridView1->Rows->Clear();
+
+			std::vector<std::string> facilities;
+
+			for (int i = 0; i < checkedListBox1->Items->Count; i++) {
+				if (checkedListBox1->GetItemCheckState(i) == CheckState::Unchecked)
+					facilities.push_back(toString(checkedListBox1->Items[i]->ToString()));
+			}
+
+			acc.regist(toString(textBox1->Text), toString(textBox2->Text), toString(textBox3->Text),
+				toString(textBox4->Text), toString(textBox5->Text), toString(textBox6->Text),
+				toInt(textBox7->Text), toInt(textBox8->Text), facilities);
+
+			textBox10->Text = "Successfully registered: " + acc.getTn().intro() + "\r\n" + textBox10->Text;
+
+			//acc.tn.addIntoJson("money", "1300$");
+			acc.getDb().save("database.json");
+		}
+		catch (json::exception e) {
+			textBox10->Text = toFormString(e.what()) + "\r\n" + textBox10->Text;
+		}
+		catch (std::exception e) {
+			textBox10->Text = toFormString(e.what()) + "\r\n" + textBox10->Text;
+		}
 	}
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 		textBox10->Text = dateTimePicker1->Value.ToString() + "\r\n" + textBox10->Text;
+		currentTime.current = currentTime.current.Now;
+		dateTimePicker1->Value = currentTime.current;
 
 		try {
 			try {
@@ -517,42 +654,89 @@ namespace CourseWork {
 				textBox10->Text = "Logged in: " + acc.getTn().intro() + " account\r\n" + textBox10->Text;
 				/*textBox10->Text += acc.getTn().isAdminMode + "\r\n";*/
 
+				isLogin = true;
+
+				isCodeClick = true;
+
+				for (int j = 0; j < checkedListBox1->Items->Count; j++)
+					checkedListBox1->SetItemChecked(j, true);
+
+				isCodeClick = false;
+
+				int time = acc.getLl().getUnpaidMonth(acc.getTn());
+				if (time > 0) {
+					textBox10->Text = "Your next month for pay: "
+						+ toSystemDate(time).AddMonths(1).ToString("MMMM yyyy") + "\r\n" + textBox10->Text;
+					currentTime.current = toSystemDate(time).AddMonths(1);
+					currentTime.current = DateTime(currentTime.current.Year, currentTime.current.Month, 1,
+						currentTime.current.Hour, currentTime.current.Minute, currentTime.current.Second);
+					dateTimePicker1->Value = currentTime.current;
+				}
+
 				dataGridView1->Rows->Clear();
 
 				if (acc.getTn().isAdminMode) {
+					button5->Enabled = false;
+					button4->Enabled = false;
+					button6->Enabled = true;
+
+					dataGridView1->AllowUserToAddRows = true;
+					dataGridView1->AllowUserToDeleteRows = true;
+
 					for (int i = 0; i < dataGridView1->Columns->Count - 2; i++)
 						dataGridView1->Columns[i]->ReadOnly = false;
 					for (int i = dataGridView1->Columns->Count - 2; i < dataGridView1->Columns->Count - 1; i++)
 						dataGridView1->Columns[i]->ReadOnly = true;
 
-					/*for (auto i : acc.getDb().getJ()["payment"]) {
-						dataGridView1->Rows->Add(toFormString("123"),
-							i.find("tariff") != i.end()
-							? toFormString(std::to_string((double)i["tariff"]))
+					checkedListBox1->Enabled = false;
+
+					for (auto i : acc.getDb().getJ()["payment"].items()) {
+						json temp = i.value();
+						dataGridView1->Rows->Add(toFormString(i.key()),
+							temp.find("tariff") != temp.end()
+							? toFormString(std::to_string((double)temp["tariff"]))
 							: "-",
-							i.find("norm") != i.end()
-							? toFormString(std::to_string((double)i["norm"]))
+							temp.find("norm") != temp.end()
+							? toFormString(std::to_string((double)temp["norm"]))
 							: "-",
-							toFormString(i["type"]));
-					}*/
+							toFormString(temp["type"]));
+					}
 				}
 				else {
+					button5->Enabled = true;
+					button4->Enabled = true;
+					button6->Enabled = false;
+
+					dataGridView1->AllowUserToAddRows = false;
+					dataGridView1->AllowUserToDeleteRows = false;
+
+					checkedListBox1->Enabled = true;
+
+					isCodeClick = true;
+
+					for (auto i : acc.getTn().getNeedToPay())
+						for (int j = 0; j < checkedListBox1->Items->Count; j++)
+							if (checkedListBox1->Items[j]->ToString() == toFormString(i))
+								checkedListBox1->SetItemChecked(j, false);
+
+					isCodeClick = false;
+
 					for (int i = 0; i < dataGridView1->Columns->Count - 2; i++)
 						dataGridView1->Columns[i]->ReadOnly = true;
 					for (int i = dataGridView1->Columns->Count - 2; i < dataGridView1->Columns->Count - 1; i++)
 						dataGridView1->Columns[i]->ReadOnly = false;
-				}
 
-				for (auto i : acc.getTn().getNeedToPay()) {
-					auto temp = acc.getDb().getJ()["payment"].at(i);
-					dataGridView1->Rows->Add(toFormString(i),
-						temp.find("tariff") != temp.end()
-						? toFormString(std::to_string((double)temp["tariff"]))
-						: "-",
-						temp.find("norm") != temp.end()
-						? toFormString(std::to_string((double)temp["norm"]))
-						: "-",
-						toFormString(temp["type"]));
+					for (auto i : acc.getTn().getNeedToPay()) {
+						auto temp = acc.getDb().getJ()["payment"].at(i);
+						dataGridView1->Rows->Add(toFormString(i),
+							temp.find("tariff") != temp.end()
+							? toFormString(std::to_string((double)temp["tariff"]))
+							: "-",
+							temp.find("norm") != temp.end()
+							? toFormString(std::to_string((double)temp["norm"]))
+							: "-",
+							toFormString(temp["type"]));
+					}
 				}
 			}
 		catch (json::exception e) {
@@ -569,7 +753,7 @@ namespace CourseWork {
 		textBox10->Text = "Account is deleted from " + toFormString(acc.getDb().filename) + "\r\n" + textBox10->Text;
 	}
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (acc.getTn().getJ() == NULL)
+		if (!isLogin || acc.getLl().finished)
 			return;
 
 		std::vector<std::vector<std::string>> total;
@@ -652,6 +836,13 @@ namespace CourseWork {
 				acc.getLl().savePayments("payments.json");
 
 				dataGridView1->Columns[4]->ReadOnly = false;
+
+				dataGridView2->Rows->Clear();
+
+				for (auto i : acc.getLl().getAllPayments())
+					dataGridView2->Rows->Add(toFormString(i["login"]), toFormString(i["sender"]),
+						toFormString(i["payments"]), toFormString(i["meters"]),
+						toFormString(i["check"]), toSystemDate(i["unixtime"]).ToString("dd.MM.yyyy"));
 			}
 			catch (json::exception e) {
 				textBox10->Text = "Error: " + toFormString(e.what()) + "\r\n" + textBox10->Text;
@@ -664,12 +855,21 @@ namespace CourseWork {
 	private: System::Void dateTimePicker1_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
 		auto temp = dateTimePicker1->Value;
 
-		if (!acc.getLl().finished) {
+		if (!isLogin)
+			currentTime.current = temp;
+		else
+		if (!acc.getLl().finished) { // not paid
+			if (currentTime.current.ToString("MMMM yyyy") == temp.ToString("MMMM yyyy")
+				&& temp.Day <= 20)
+				currentTime.current = temp;
+			if (acc.getLl().started && currentTime.current.ToString("MMMM yyyy") == temp.ToString("MMMM yyyy"))
+				currentTime.current = temp;
 			dateTimePicker1->Value = currentTime.current;
 		}
-		else
+		else // paid
 			if (currentTime.current.AddMonths(1).ToString("MMMM yyyy") == temp.ToString("MMMM yyyy")) {
-				currentTime.current = temp;
+				//currentTime.current = temp;
+				currentTime.current = DateTime(temp.Year, temp.Month, 1, temp.Hour, temp.Minute, temp.Second);
 				textBox10->Text = "New month is " + currentTime.current.ToString("MMMM") + "\r\n" + textBox10->Text;
 				dataGridView1->Rows->Clear();
 				for (auto i : acc.getTn().getNeedToPay()) {
@@ -685,8 +885,11 @@ namespace CourseWork {
 				}
 				acc.getLl().finished = false;
 			}
-			else
+			else {
+				if (currentTime.current.ToString("MMMM yyyy") == temp.ToString("MMMM yyyy"))
+					currentTime.current = temp;
 				dateTimePicker1->Value = currentTime.current;
+			}
 
 		/*if (!acc.getLl().finished) {
 			textBox10->Text = "You can't change month if you didn't pay for this\r\n" + textBox10->Text;
@@ -733,6 +936,244 @@ namespace CourseWork {
 	}
 	private: System::Void MyForm_Shown(System::Object^  sender, System::EventArgs^  e) {
 		currentTime.current = dateTimePicker1->Value;
+		currentTime.current = DateTime(currentTime.current.Year, currentTime.current.Month, 1,
+			currentTime.current.Hour, currentTime.current.Minute, currentTime.current.Second);
+
+		checkedListBox1->Enabled = false;
+
+		try {
+			acc.connectToDb("database.json");
+
+			for (auto i : acc.getDb().getJ()["payment"].items())
+				checkedListBox1->Items->Add(toFormString(i.key()), false);
+
+			dataGridView2->Rows->Clear();
+
+			for (auto i : acc.getLl().getAllPayments())
+				dataGridView2->Rows->Add(toFormString(i["login"]), toFormString(i["sender"]),
+					toFormString(i["payments"]), toFormString(i["meters"]),
+					toFormString(i["check"]), toSystemDate(i["unixtime"]).ToString("dd.MM.yyyy"));
+		}
+		catch (json::exception e) {
+			textBox10->Text = toFormString(e.what()) + "\r\n" + textBox10->Text;
+		}
+		catch (std::exception e) {
+			textBox10->Text = toFormString(e.what()) + "\r\n" + textBox10->Text;
+			throw std::exception("File database.json can't be opened");
+		}
+	}
+	private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (!acc.getTn().isAdminMode)
+			return;
+
+		json payment = {};
+
+		std::vector<std::string> temp;
+		std::vector<double> nums;
+		
+		try {
+			for (int i = 0; i < dataGridView1->Rows->Count; i++) {
+				for (int j = 0; j < dataGridView1->Rows[i]->Cells->Count - 2; j++) {
+					try {
+						temp.push_back(toString(dataGridView1->Rows[i]->Cells[j]->Value->ToString()));
+					}
+					catch (System::NullReferenceException^) {
+						temp.push_back("");
+					}
+
+					try {
+						double num = System::Convert::ToDouble(dataGridView1->Rows[i]->Cells[j]->Value->ToString()->Replace(".", ","));
+						nums.push_back(num);
+					}
+					catch (System::FormatException^) {
+						nums.push_back(NULL);
+					}
+					catch (System::NullReferenceException^) {
+						nums.push_back(NULL);
+					}
+				}
+
+				if (temp[0] == "" && temp[1] == "" && temp[2] == "" && temp[3] == "") {
+					temp.clear();
+					nums.clear();
+					continue;
+				}
+				else {
+					if (temp[0] == "") {
+						std::string errStr = "Please input name (kind) of service in " + std::to_string(i + 1) + " row";
+						throw std::exception(errStr.c_str());
+					}
+
+					if (temp[3] == "" || (temp[3] != "footage" && temp[3] != "meter")) {
+						std::string errStr = "Please input type of service (\"" + temp[0] + "\" in "
+							+ std::to_string(i + 1) + " row): \"footage\" or \"meter\" only";
+						throw std::exception(errStr.c_str());
+					}
+
+					if (nums[1] == NULL && nums[2] == NULL) {
+						std::string errStr = "Please input tariff or/and norm in \"" + temp[0] + "\" in "
+							+ std::to_string(i + 1) + " row";
+						throw std::exception(errStr.c_str());
+					}
+				}
+
+				/*if (temp[0] == "" || (nums[1] == NULL && nums[2] == NULL) || (temp[3] != "footage" && temp[3] != "meter")) {
+					temp.clear();
+					nums.clear();
+					continue;
+				}*/
+
+				if (nums[2] == NULL ^ nums[1] == NULL) {
+					if (nums[2] == NULL)
+						payment[temp[0]] = {
+							{ "tariff", nums[1] },
+							{ "type", temp[3] }
+					};
+					if (nums[1] == NULL) {
+						if (temp[3] == "footage")
+							throw std::exception("You can't input footage service without tariff");
+						payment[temp[0]] = {
+							{ "norm", nums[2] },
+							{ "type", temp[3] }
+						};
+					}
+				}
+				else
+					payment[temp[0]] = {
+						{ "norm", nums[2] },
+						{ "tariff", nums[1] },
+						{ "type", temp[3] }
+				};
+
+				temp.clear();
+				nums.clear();
+			}
+
+			/*std::ofstream file("pay.json");
+			file << std::setw(4) << payment << std::endl;*/
+
+			std::set<std::string> oldJson;
+			std::set<std::string> newJson;
+			std::set<std::string> result;
+
+			for (auto i : acc.getDb().getJ()["payment"].items())
+				oldJson.insert(i.key());
+
+			for (auto i : payment.items())
+				newJson.insert(i.key());
+
+			std::set_difference(oldJson.begin(), oldJson.end(),
+				newJson.begin(), newJson.end(), std::inserter(result, result.begin())); // deleted
+
+			if (result.size() > 0) // deleted
+				for (std::set<std::string>::iterator i = result.begin(); i != result.end(); ++i)
+					for (auto& j : acc.getDb().getJ()["users"]) {
+						int cx = 0;
+						if (j["auth"].count("isAdmin") > 0) continue;
+						//if (j["pays"]["needToPay"].count(*i) > 0)
+						//textBox10->Text = toFormString(std::to_string(j["pays"]["needToPay"].count(*i))) + "\r\n" + textBox10->Text;
+						for (auto& k : j["pays"]["needToPay"].items()) {
+							if (k.value() == *i) {
+								//textBox10->Text = toFormString(std::to_string(cx)) + "\r\n" + textBox10->Text;
+								//j["pays"]["needToPay"]->at(k.key()).clear();
+								//j["pays"]["needToPay"].erase(k.key());
+								j["pays"]["needToPay"].erase(j["pays"]["needToPay"].begin() + cx);
+								break;
+							}
+							cx++;
+						}
+							//textBox10->Text = toFormString(k.key()) + " " + toFormString(*i) + "\r\n" + textBox10->Text;
+						//j.find(*//i).key().clear();
+						//j["pays"]["needToPay"].erase(*i);
+					}
+
+			result.clear();
+
+			std::set_difference(newJson.begin(), newJson.end(),
+				oldJson.begin(), oldJson.end(), std::inserter(result, result.begin())); // inserted
+
+			if (result.size() > 0) // inserted
+				for (std::set<std::string>::iterator i = result.begin(); i != result.end(); ++i)
+					for (auto& j : acc.getDb().getJ()["users"])
+						if (j["auth"].count("isAdmin") == 0)
+							j["pays"]["needToPay"].push_back(*i);
+
+			//textBox10->Text = (oldJson > newJson).ToString() + " " + (newJson > oldJson).ToString() + "\r\n" + textBox10->Text;
+
+			acc.getDb().getJ()["payment"] = payment;
+			acc.getDb().save();
+
+			checkedListBox1->Items->Clear();
+
+			isCodeClick = true;
+
+			for (auto i : acc.getDb().getJ()["payment"].items())
+				checkedListBox1->Items->Add(toFormString(i.key()), true);
+
+			isCodeClick = false;
+
+			textBox10->Text = "Changes successfully saved\r\n" + textBox10->Text;
+		}
+		catch (json::exception e) {
+			textBox10->Text = "There is some error: " + toFormString(e.what()) + "\r\n" + textBox10->Text;
+		}
+		catch (std::exception e) {
+			textBox10->Text = toFormString(e.what()) + "\r\n" + textBox10->Text;
+		}
+	}
+	private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (isLogin) {
+			acc.getTn().~Tenant();
+			isLogin = false;
+			textBox10->Text = "Logout is executed\r\n" + textBox10->Text;
+		}
+		else
+			textBox10->Text = "Logout has executed already\r\n" + textBox10->Text;
+
+		dataGridView1->AllowUserToAddRows = false;
+		dataGridView1->AllowUserToDeleteRows = false;
+		dataGridView1->Rows->Clear();
+
+		checkedListBox1->Enabled = false;
+
+		isCodeClick = true;
+
+		for (int j = 0; j < checkedListBox1->Items->Count; j++)
+			checkedListBox1->SetItemChecked(j, false);
+
+		isCodeClick = false;
+	}
+	private: System::Void checkedListBox1_ItemCheck(System::Object^  sender, System::Windows::Forms::ItemCheckEventArgs^  e) {
+		try {
+			if (!isLogin || isCodeClick)
+				return;
+
+			if (e->NewValue == CheckState::Checked)
+				for (auto& j : acc.getDb().getJ()["users"]) {
+					int cx = 0;
+					if (j["auth"].count("isAdmin") > 0) continue;
+					for (auto& k : j["pays"]["needToPay"].items()) {
+						if (k.value() == toString(checkedListBox1->Items[e->Index]->ToString())) {
+							j["pays"]["needToPay"].erase(j["pays"]["needToPay"].begin() + cx);
+							break;
+						}
+						cx++;
+					}
+				}
+			else if (e->NewValue == CheckState::Unchecked) {
+				for (auto& j : acc.getDb().getJ()["users"])
+					if (j["auth"].count("isAdmin") == 0)
+						j["pays"]["needToPay"].push_back(toString(checkedListBox1->Items[e->Index]->ToString()));
+			}
+
+			acc.getDb().save();
+		}
+		catch (json::exception e) {
+			textBox10->Text = "There is some error: " + toFormString(e.what()) + "\r\n" + textBox10->Text;
+		}
+		catch (std::exception e) {
+			textBox10->Text = toFormString(e.what()) + "\r\n" + textBox10->Text;
+		}
 	}
 };
 }

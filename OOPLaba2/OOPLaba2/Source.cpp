@@ -19,7 +19,18 @@ class Poly {
 	public:
 		Poly() {};
 		Poly(std::vector<Node> data) { this->data = data; }
+		Poly(Poly& p) {
+			std::cout << "\tcopy constructor" << std::endl;
+			for (auto i : p.data)
+				this->data.push_back(i);
+		}
+		Poly(const Poly& p) {
+			std::cout << "\tconst copy constructor" << std::endl;
+			for (auto i : p.data)
+				this->data.push_back(i);
+		}
 		Poly(Node node) { this->data.push_back(node); }
+		~Poly() { std::vector<Node> name; data.swap(name); std::cout << data.size() << " " << "destruct\n"; }
 		std::vector<Node> getData() { return data; }
 		void Add(Node node) {
 			bool flag = false;
@@ -87,19 +98,30 @@ std::ostream& operator<<(std::ostream& os, Poly& p) {
 }
 
 int main() {
-	Poly p(std::vector<Node>{Node(2, 3), Node(17, 0)});
-	Poly n(std::vector<Node>{Node(5, 3), Node(3, 0)});
-	//std::cout << p.Power();
-	//std::cout << " " << p.calculate(5);
-	std::cout << p << std::endl;
-	std::cout << n << std::endl;
-	Poly s = p + n;
-	std::cout << s << std::endl;
-	s = p;
-	//std::cout << " " << s.calculate(2);
-	//std::cout << " " << s.calculate(2);
+	Poly p(std::vector<Node>{Node(-1, 5), Node(2, 3), Node(7, 2), Node(17, 0)});
+	Poly n(std::vector<Node>{Node(5, 3), Node(-3, 2), Node(3, 0)});
+	
+	std::cout << "f(x) = " << p;
+	std::cout << "f(2) = " << p.calculate(2) << "\n\n";
 
-	std::cout << s;
+	std::cout << "g(x) = " << n;
+	std::cout << "g(3) = " << n.calculate(3) << "\n\n";
+	Poly s = p + n;
+	 
+	std::cout << "f(x) + g(x) = " << s;
+	std::cout << "f(2) + g(2) = " << s.calculate(2) << "\n\n";
+
+	s = p;
+	std::cout << "s = f(x) = " << s;
+
+	Poly forCopy(std::vector<Node>{Node(2, 2), Node(1, 1)});
+	std::cout << "obj" << std::endl;
+	Poly obj(forCopy);
+	std::cout << "obj1" << std::endl;
+	Poly obj1 = obj;
+	std::cout << "obj2" << std::endl;
+	Poly obj2 = Poly(Poly(obj1));
+
 	system("pause");
 	return 0;
 }

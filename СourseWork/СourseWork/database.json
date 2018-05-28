@@ -1,17 +1,17 @@
 {
     "payment": {
         "gas": {
-            "norm": 5,
-            "tariff": 5,
+            "norm": 5.0,
+            "tariff": 5.0,
             "type": "meter"
         },
         "renovation": {
-            "tariff": 5,
+            "tariff": 5.0,
             "type": "footage"
         },
         "water": {
-            "norm": 10,
-            "tariff": 3,
+            "norm": 10.0,
+            "tariff": 3.0,
             "type": "meter"
         }
     },
@@ -23,8 +23,8 @@
             },
             "pays": {
                 "needToPay": [
-                    "water",
-                    "gas"
+                    "gas",
+                    "water"
                 ]
             },
             "privacy": {
@@ -41,8 +41,7 @@
             },
             "pays": {
                 "needToPay": [
-                    "water",
-                    "renovation"
+                    "water"
                 ]
             },
             "privacy": {
@@ -59,11 +58,32 @@
                 "password": "admin"
             },
             "pays": {
-                "needToPay": ["gas", "renovation", "water"]
+                "needToPay": []
             },
             "privacy": {
                 "name": "Sasha",
                 "surname": "Ponev"
+            }
+        },
+        {
+            "auth": {
+                "login": "damn",
+                "password": "234"
+            },
+            "pays": {
+                "needToPay": [
+                    "gas",
+                    "water",
+                    "renovation"
+                ]
+            },
+            "privacy": {
+                "address": "",
+                "area": 2,
+                "father's name": "",
+                "living people": 3,
+                "name": "",
+                "surname": ""
             }
         }
     ]

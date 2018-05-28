@@ -16,6 +16,8 @@ class Landlord {
 		void acceptPay(std::vector<std::vector<std::string>> map,
 			std::vector<std::vector<double>> numbers, Tenant tn, int unixtime);
 		void savePayments(std::string path);
+		int getUnpaidMonth(Tenant tn);
+		json getAllPayments();
 		bool finished = false;
 		bool started = false;
 	private:

@@ -31,7 +31,8 @@ void Account::login(std::string login, std::string password) {
 }
 
 void Account::regist(std::string login, std::string password, std::string name, std::string surname,
-	std::string father, std::string address, unsigned int area, unsigned int people, std::string facilities) {
+	std::string father, std::string address, unsigned int area, unsigned int people,
+	std::vector<std::string> facilities) {
 	/*json person = R"(
 		{
             "auth": {
@@ -66,6 +67,11 @@ void Account::regist(std::string login, std::string password, std::string name, 
 		}
 	};*/
 
+	for (auto i : db.getJ()["users"]) {
+		if (i["auth"]["login"] == login)
+			throw std::exception("Account with such login already exists, select another");
+	}
+
 	json person;
 
 	person["auth"]["login"] = login;
@@ -76,7 +82,9 @@ void Account::regist(std::string login, std::string password, std::string name, 
 	person["privacy"]["address"] = address;
 	person["privacy"]["area"] = area;
 	person["privacy"]["living people"] = people;
-	person["privacy"]["facilities"] = facilities;
+	//person["privacy"]["facilities"] = facilities;
+
+	person["pays"]["needToPay"] = facilities;
 
 	Tenant temp(&person);
 

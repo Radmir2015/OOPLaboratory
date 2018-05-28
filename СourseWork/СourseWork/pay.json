@@ -1,0 +1,20 @@
+{
+    "fse": {
+        "tariff": 23.0,
+        "type": "footage"
+    },
+    "gas": {
+        "norm": 5.0,
+        "tariff": 5.0,
+        "type": "meter"
+    },
+    "renovation": {
+        "tariff": 5.0,
+        "type": "footage"
+    },
+    "water": {
+        "norm": 10.0,
+        "tariff": 3.0,
+        "type": "meter"
+    }
+}
