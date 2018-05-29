@@ -23,7 +23,6 @@
             },
             "pays": {
                 "needToPay": [
-                    "gas",
                     "water"
                 ]
             },
@@ -72,9 +71,7 @@
             },
             "pays": {
                 "needToPay": [
-                    "gas",
-                    "water",
-                    "renovation"
+                    "water"
                 ]
             },
             "privacy": {
@@ -82,6 +79,63 @@
                 "area": 2,
                 "father's name": "",
                 "living people": 3,
+                "name": "",
+                "surname": ""
+            }
+        },
+        {
+            "auth": {
+                "login": "alexandr",
+                "password": "motherduck"
+            },
+            "pays": {
+                "needToPay": [
+                    "water"
+                ]
+            },
+            "privacy": {
+                "address": "",
+                "area": 45,
+                "father's name": "",
+                "living people": 1,
+                "name": "",
+                "surname": ""
+            }
+        },
+        {
+            "auth": {
+                "login": "privet",
+                "password": "123"
+            },
+            "pays": {
+                "needToPay": [
+                    "water"
+                ]
+            },
+            "privacy": {
+                "address": "",
+                "area": 3,
+                "father's name": "",
+                "living people": 4,
+                "name": "John",
+                "surname": "Sena"
+            }
+        },
+        {
+            "auth": {
+                "login": "qwerty",
+                "password": "123"
+            },
+            "pays": {
+                "needToPay": [
+                    "water"
+                ]
+            },
+            "privacy": {
+                "address": "",
+                "area": 100,
+                "father's name": "",
+                "living people": 5,
                 "name": "",
                 "surname": ""
             }

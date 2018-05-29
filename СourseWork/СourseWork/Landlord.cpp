@@ -4,6 +4,7 @@ Landlord::Landlord() {
 	std::ifstream file("payments.json");
 	if (file.is_open())
 		file >> this->allPayments;
+	file.close();
 }
 
 std::vector<double> Landlord::getBill(std::vector<std::vector<std::string>> map,
@@ -53,6 +54,7 @@ void Landlord::acceptPay(std::vector<std::vector<std::string>> map,
 void Landlord::savePayments(std::string path) {
 	std::ofstream file(path);
 	file << std::setw(4) << this->allPayments << std::endl;
+	file.close();
 }
 
 int Landlord::getUnpaidMonth(Tenant tn) {

@@ -1,0 +1,13 @@
+[
+    {
+        "check": "36",
+        "login": "qwerty",
+        "meters": "12",
+        "norm": "10.000000",
+        "payments": "water",
+        "sender": " ",
+        "tariff": "3.000000",
+        "type": "meter",
+        "unixtime": 1547002681
+    }
+]

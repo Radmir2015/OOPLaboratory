@@ -19,6 +19,7 @@ namespace CourseWork {
 	value class CurrentTime {
 		public:
 			static DateTime current;
+			static DateTime sendedMeters;
 	};
 
 	CurrentTime currentTime;
@@ -82,12 +83,12 @@ namespace CourseWork {
 
 
 	private: System::Windows::Forms::Button^  button4;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column3;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column6;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column4;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column5;
+
+
+
+
+
+
 	private: System::Windows::Forms::Button^  button5;
 	private: System::Windows::Forms::Button^  button6;
 	private: System::Windows::Forms::Button^  button7;
@@ -100,6 +101,13 @@ namespace CourseWork {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column10;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column11;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column12;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column6;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column4;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column5;
+	private: System::Windows::Forms::Button^  button8;
 
 
 
@@ -169,6 +177,7 @@ namespace CourseWork {
 			this->Column10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column11 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column12 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -319,6 +328,7 @@ namespace CourseWork {
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(102, 20);
 			this->textBox8->TabIndex = 17;
+			this->textBox8->Text = L"0";
 			// 
 			// label7
 			// 
@@ -335,6 +345,7 @@ namespace CourseWork {
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(102, 20);
 			this->textBox7->TabIndex = 15;
+			this->textBox7->Text = L"0";
 			// 
 			// label5
 			// 
@@ -414,6 +425,7 @@ namespace CourseWork {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->button8);
 			this->groupBox2->Controls->Add(this->button6);
 			this->groupBox2->Controls->Add(this->button5);
 			this->groupBox2->Controls->Add(this->button4);
@@ -477,41 +489,41 @@ namespace CourseWork {
 			// Column1
 			// 
 			this->Column1->FillWeight = 107.8173F;
-			this->Column1->HeaderText = L"Вид услуги";
+			this->Column1->HeaderText = L"Service";
 			this->Column1->Name = L"Column1";
 			this->Column1->ReadOnly = true;
 			// 
 			// Column2
 			// 
 			this->Column2->FillWeight = 107.8173F;
-			this->Column2->HeaderText = L"Тариф";
+			this->Column2->HeaderText = L"Tariff";
 			this->Column2->Name = L"Column2";
 			this->Column2->ReadOnly = true;
 			// 
 			// Column3
 			// 
 			this->Column3->FillWeight = 107.8173F;
-			this->Column3->HeaderText = L"Норматив";
+			this->Column3->HeaderText = L"Norm";
 			this->Column3->Name = L"Column3";
 			this->Column3->ReadOnly = true;
 			// 
 			// Column6
 			// 
 			this->Column6->FillWeight = 60.9137F;
-			this->Column6->HeaderText = L"Тип";
+			this->Column6->HeaderText = L"Type";
 			this->Column6->Name = L"Column6";
 			this->Column6->ReadOnly = true;
 			// 
 			// Column4
 			// 
 			this->Column4->FillWeight = 107.8173F;
-			this->Column4->HeaderText = L"Показания";
+			this->Column4->HeaderText = L"Meter";
 			this->Column4->Name = L"Column4";
 			// 
 			// Column5
 			// 
 			this->Column5->FillWeight = 107.8173F;
-			this->Column5->HeaderText = L"Счет";
+			this->Column5->HeaderText = L"Check";
 			this->Column5->Name = L"Column5";
 			this->Column5->ReadOnly = true;
 			// 
@@ -572,6 +584,16 @@ namespace CourseWork {
 			this->Column12->HeaderText = L"Date";
 			this->Column12->Name = L"Column12";
 			// 
+			// button8
+			// 
+			this->button8->Location = System::Drawing::Point(136, 135);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(75, 23);
+			this->button8->TabIndex = 13;
+			this->button8->Text = L"Outdated";
+			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -581,8 +603,10 @@ namespace CourseWork {
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->textBox10);
 			this->Controls->Add(this->groupBox1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->Text = L"Service center";
 			this->Shown += gcnew System::EventHandler(this, &MyForm::MyForm_Shown);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
@@ -599,8 +623,17 @@ namespace CourseWork {
 		try {
 			acc.connectToDb("database.json");
 
-			if (textBox7->Text == "") textBox7->Text = "0";
-			if (textBox8->Text == "") textBox8->Text = "0";
+			if (System::Convert::ToInt16(textBox7->Text) <= 0)
+				throw std::exception("Please fill in AREA with integer countable number");
+
+			if (System::Convert::ToInt16(textBox8->Text) <= 0)
+				throw std::exception("Please fill in LIVING PEOPLE with integer countable number");
+
+			if (textBox1->Text->Length < 1)
+				throw std::exception("Enter at least 1 character in the LOGIN field");
+
+			if (textBox2->Text->Length < 1)
+				throw std::exception("Enter at least 1 character in the PASSWORD field");
 
 			isCodeClick = true;
 
@@ -624,8 +657,13 @@ namespace CourseWork {
 
 			textBox10->Text = "Successfully registered: " + acc.getTn().intro() + "\r\n" + textBox10->Text;
 
-			//acc.tn.addIntoJson("money", "1300$");
+			textBox3->Text = ""; textBox4->Text = ""; textBox5->Text = "";
+			textBox6->Text = ""; textBox7->Text = "0"; textBox8->Text = "0";
+
 			acc.getDb().save("database.json");
+		}
+		catch (System::FormatException^ e) {
+			textBox10->Text = "One or few fields don't filled by ints\r\n" + e->Message + "\r\n" + textBox10->Text;
 		}
 		catch (json::exception e) {
 			textBox10->Text = toFormString(e.what()) + "\r\n" + textBox10->Text;
@@ -636,7 +674,10 @@ namespace CourseWork {
 	}
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 		textBox10->Text = dateTimePicker1->Value.ToString() + "\r\n" + textBox10->Text;
-		currentTime.current = currentTime.current.Now;
+		//currentTime.current = currentTime.current.Now;
+		currentTime.current = DateTime(currentTime.current.Year, currentTime.current.Month,
+			currentTime.current.Day <= 20 ? currentTime.current.Day : 1,
+			currentTime.current.Hour, currentTime.current.Minute, currentTime.current.Second);
 		dateTimePicker1->Value = currentTime.current;
 
 		try {
@@ -747,10 +788,31 @@ namespace CourseWork {
 		}
 	}
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-		acc.connectToDb("database.json");
-		acc.getDb().deleteUser(acc.getDb().getUser(toString(textBox1->Text), toString(textBox2->Text)));
-		acc.getDb().save();
-		textBox10->Text = "Account is deleted from " + toFormString(acc.getDb().filename) + "\r\n" + textBox10->Text;
+		try {
+			if (acc.getTn().isAdminMode)
+				throw std::exception("You can't delete Admin account");
+			acc.connectToDb("database.json");
+			acc.getDb().deleteUser(acc.getDb().getUser(toString(textBox1->Text), toString(textBox2->Text)));
+			acc.getDb().save();
+
+			isCodeClick = true;
+
+			for (int j = 0; j < checkedListBox1->Items->Count; j++)
+				checkedListBox1->SetItemChecked(j, false);
+
+			isCodeClick = false;
+
+			checkedListBox1->Enabled = false;
+			dataGridView1->Rows->Clear();
+
+			textBox10->Text = "Account is deleted from " + toFormString(acc.getDb().filename) + "\r\n" + textBox10->Text;
+		}
+		catch (json::exception e) {
+			textBox10->Text = "Error: " + toFormString(e.what()) + "\r\n" + textBox10->Text;
+		}
+		catch (std::exception e) {
+			textBox10->Text = "Error: " + toFormString(e.what()) + "\r\n" + textBox10->Text;
+		}
 	}
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (!isLogin || acc.getLl().finished)
@@ -787,6 +849,8 @@ namespace CourseWork {
 				dataGridView1->Rows[i]->Cells[5]->Value = pays[i];
 
 			dataGridView1->Columns[4]->ReadOnly = true;
+
+			currentTime.sendedMeters = currentTime.current;
 
 			textBox10->Text = "Successfully sended meters\r\n" + textBox10->Text;
 		}
@@ -840,7 +904,7 @@ namespace CourseWork {
 				dataGridView2->Rows->Clear();
 
 				for (auto i : acc.getLl().getAllPayments())
-					dataGridView2->Rows->Add(toFormString(i["login"]), toFormString(i["sender"]),
+					dataGridView2->Rows->Insert(0, toFormString(i["login"]), toFormString(i["sender"]),
 						toFormString(i["payments"]), toFormString(i["meters"]),
 						toFormString(i["check"]), toSystemDate(i["unixtime"]).ToString("dd.MM.yyyy"));
 			}
@@ -855,84 +919,50 @@ namespace CourseWork {
 	private: System::Void dateTimePicker1_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
 		auto temp = dateTimePicker1->Value;
 
-		if (!isLogin)
-			currentTime.current = temp;
-		else
-		if (!acc.getLl().finished) { // not paid
-			if (currentTime.current.ToString("MMMM yyyy") == temp.ToString("MMMM yyyy")
-				&& temp.Day <= 20)
+		try {
+			if (!isLogin)
 				currentTime.current = temp;
-			if (acc.getLl().started && currentTime.current.ToString("MMMM yyyy") == temp.ToString("MMMM yyyy"))
-				currentTime.current = temp;
-			dateTimePicker1->Value = currentTime.current;
-		}
-		else // paid
-			if (currentTime.current.AddMonths(1).ToString("MMMM yyyy") == temp.ToString("MMMM yyyy")) {
-				//currentTime.current = temp;
-				currentTime.current = DateTime(temp.Year, temp.Month, 1, temp.Hour, temp.Minute, temp.Second);
-				textBox10->Text = "New month is " + currentTime.current.ToString("MMMM") + "\r\n" + textBox10->Text;
-				dataGridView1->Rows->Clear();
-				for (auto i : acc.getTn().getNeedToPay()) {
-					auto temp = acc.getDb().getJ()["payment"].at(i);
-					dataGridView1->Rows->Add(toFormString(i),
-						temp.find("tariff") != temp.end()
-						? toFormString(std::to_string((double)temp["tariff"]))
-						: "-",
-						temp.find("norm") != temp.end()
-						? toFormString(std::to_string((double)temp["norm"]))
-						: "-",
-						toFormString(temp["type"]));
-				}
-				acc.getLl().finished = false;
-			}
-			else {
-				if (currentTime.current.ToString("MMMM yyyy") == temp.ToString("MMMM yyyy"))
-					currentTime.current = temp;
-				dateTimePicker1->Value = currentTime.current;
-			}
-
-		/*if (!acc.getLl().finished) {
-			textBox10->Text = "You can't change month if you didn't pay for this\r\n" + textBox10->Text;
-			dateTimePicker1->Value = currentTime.current;
-		}
-		else if (temp.Compare(temp, currentTime.current) == 1
-			&& temp.AddMonths(-1).Month - currentTime.current.Month == 0
-			&& temp.AddMonths(-1).Year - currentTime.current.Year == 0) {
-			currentTime.current = temp;
-			textBox10->Text = "New month is " + currentTime.current.ToString("MMMM") + "\r\n" + textBox10->Text;
-			//dateTimePicker1->Value = currentTime.current;
-			dataGridView1->Rows->Clear();
-			for (auto i : acc.getTn().getNeedToPay()) {
-				auto temp = acc.getDb().getJ()["payment"].at(i);
-				dataGridView1->Rows->Add(toFormString(i),
-					temp.find("tariff") != temp.end()
-					? toFormString(std::to_string((double)temp["tariff"]))
-					: "-",
-					temp.find("norm") != temp.end()
-					? toFormString(std::to_string((double)temp["norm"]))
-					: "-",
-					toFormString(temp["type"]));
-			}
-			acc.getLl().finished = false;
-		}
-		else {
-			if (temp.AddMonths(-1).Year - currentTime.current.Year != 0) {
-				textBox10->Text = "Please pay first for " + currentTime.current.ToString("MMMM yyyy") + "\r\n" + textBox10->Text;
-				dateTimePicker1->Value = currentTime.current;
-			}
-			if (temp.AddMonths(-1).Month - currentTime.current.Month != 0)
-				if (temp.Compare(temp, currentTime.current) == 1) {
-					textBox10->Text = "Pay for " + currentTime.current.ToString("MMMM") + " first\r\n" + textBox10->Text;
+			else
+				if (!acc.getLl().finished) { // not paid
+					if (!acc.getLl().started && currentTime.current.ToString("MMMM yyyy") == temp.ToString("MMMM yyyy")
+						&& temp.Day <= 20) // not sended meters
+						currentTime.current = temp;
+					if (acc.getLl().started && currentTime.current.ToString("MMMM yyyy") == temp.ToString("MMMM yyyy")
+						&& temp.Compare(currentTime.sendedMeters, temp) <= 0) // sended meters
+						currentTime.current = temp;
 					dateTimePicker1->Value = currentTime.current;
 				}
-				else if (temp.Compare(temp, currentTime.current) == -1) {
-					textBox10->Text = "You can't go to the past\r\n" + textBox10->Text;
-					dateTimePicker1->Value = currentTime.current;
-				}
-		}*/
-		//temp = currentTime.current;
-			
-		//textBox10->Text = "" + " " + textBox10->Text;
+				else // paid
+					if (currentTime.current.AddMonths(1).ToString("MMMM yyyy") == temp.ToString("MMMM yyyy")) {
+						//currentTime.current = temp;
+						currentTime.current = DateTime(temp.Year, temp.Month, 1, temp.Hour, temp.Minute, temp.Second);
+						textBox10->Text = "New month is " + currentTime.current.ToString("MMMM") + "\r\n" + textBox10->Text;
+						dataGridView1->Rows->Clear();
+						for (auto i : acc.getTn().getNeedToPay()) {
+							auto temp = acc.getDb().getJ()["payment"].at(i);
+							dataGridView1->Rows->Add(toFormString(i),
+								temp.find("tariff") != temp.end()
+								? toFormString(std::to_string((double)temp["tariff"]))
+								: "-",
+								temp.find("norm") != temp.end()
+								? toFormString(std::to_string((double)temp["norm"]))
+								: "-",
+								toFormString(temp["type"]));
+						}
+						acc.getLl().finished = false;
+					}
+					else {
+						if (currentTime.current.ToString("MMMM yyyy") == temp.ToString("MMMM yyyy"))
+							currentTime.current = temp;
+						dateTimePicker1->Value = currentTime.current;
+					}
+		}
+		catch (json::exception e) {
+			textBox10->Text = "Error: " + toFormString(e.what()) + "\r\n" + textBox10->Text;
+		}
+		catch (std::exception e) {
+			textBox10->Text = "Error: " + toFormString(e.what()) + "\r\n" + textBox10->Text;
+		}
 	}
 	private: System::Void MyForm_Shown(System::Object^  sender, System::EventArgs^  e) {
 		currentTime.current = dateTimePicker1->Value;
@@ -950,7 +980,7 @@ namespace CourseWork {
 			dataGridView2->Rows->Clear();
 
 			for (auto i : acc.getLl().getAllPayments())
-				dataGridView2->Rows->Add(toFormString(i["login"]), toFormString(i["sender"]),
+				dataGridView2->Rows->Insert(0, toFormString(i["login"]), toFormString(i["sender"]),
 					toFormString(i["payments"]), toFormString(i["meters"]),
 					toFormString(i["check"]), toSystemDate(i["unixtime"]).ToString("dd.MM.yyyy"));
 		}
@@ -1017,12 +1047,6 @@ namespace CourseWork {
 					}
 				}
 
-				/*if (temp[0] == "" || (nums[1] == NULL && nums[2] == NULL) || (temp[3] != "footage" && temp[3] != "meter")) {
-					temp.clear();
-					nums.clear();
-					continue;
-				}*/
-
 				if (nums[2] == NULL ^ nums[1] == NULL) {
 					if (nums[2] == NULL)
 						payment[temp[0]] = {
@@ -1049,9 +1073,6 @@ namespace CourseWork {
 				nums.clear();
 			}
 
-			/*std::ofstream file("pay.json");
-			file << std::setw(4) << payment << std::endl;*/
-
 			std::set<std::string> oldJson;
 			std::set<std::string> newJson;
 			std::set<std::string> result;
@@ -1070,21 +1091,13 @@ namespace CourseWork {
 					for (auto& j : acc.getDb().getJ()["users"]) {
 						int cx = 0;
 						if (j["auth"].count("isAdmin") > 0) continue;
-						//if (j["pays"]["needToPay"].count(*i) > 0)
-						//textBox10->Text = toFormString(std::to_string(j["pays"]["needToPay"].count(*i))) + "\r\n" + textBox10->Text;
 						for (auto& k : j["pays"]["needToPay"].items()) {
 							if (k.value() == *i) {
-								//textBox10->Text = toFormString(std::to_string(cx)) + "\r\n" + textBox10->Text;
-								//j["pays"]["needToPay"]->at(k.key()).clear();
-								//j["pays"]["needToPay"].erase(k.key());
 								j["pays"]["needToPay"].erase(j["pays"]["needToPay"].begin() + cx);
 								break;
 							}
 							cx++;
 						}
-							//textBox10->Text = toFormString(k.key()) + " " + toFormString(*i) + "\r\n" + textBox10->Text;
-						//j.find(*//i).key().clear();
-						//j["pays"]["needToPay"].erase(*i);
 					}
 
 			result.clear();
@@ -1097,8 +1110,6 @@ namespace CourseWork {
 					for (auto& j : acc.getDb().getJ()["users"])
 						if (j["auth"].count("isAdmin") == 0)
 							j["pays"]["needToPay"].push_back(*i);
-
-			//textBox10->Text = (oldJson > newJson).ToString() + " " + (newJson > oldJson).ToString() + "\r\n" + textBox10->Text;
 
 			acc.getDb().getJ()["payment"] = payment;
 			acc.getDb().save();
@@ -1122,26 +1133,31 @@ namespace CourseWork {
 		}
 	}
 	private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (isLogin) {
-			acc.getTn().~Tenant();
-			isLogin = false;
-			textBox10->Text = "Logout is executed\r\n" + textBox10->Text;
+		try {
+			if (isLogin) {
+				acc.getTn().~Tenant();
+				isLogin = false;
+				textBox10->Text = "Logout is executed\r\n" + textBox10->Text;
+			}
+			else
+				textBox10->Text = "Logout has executed already\r\n" + textBox10->Text;
+
+			dataGridView1->AllowUserToAddRows = false;
+			dataGridView1->AllowUserToDeleteRows = false;
+			dataGridView1->Rows->Clear();
+
+			checkedListBox1->Enabled = false;
+
+			isCodeClick = true;
+
+			for (int j = 0; j < checkedListBox1->Items->Count; j++)
+				checkedListBox1->SetItemChecked(j, false);
+
+			isCodeClick = false;
 		}
-		else
-			textBox10->Text = "Logout has executed already\r\n" + textBox10->Text;
-
-		dataGridView1->AllowUserToAddRows = false;
-		dataGridView1->AllowUserToDeleteRows = false;
-		dataGridView1->Rows->Clear();
-
-		checkedListBox1->Enabled = false;
-
-		isCodeClick = true;
-
-		for (int j = 0; j < checkedListBox1->Items->Count; j++)
-			checkedListBox1->SetItemChecked(j, false);
-
-		isCodeClick = false;
+		catch (std::exception e) {
+			textBox10->Text = "Error: " + toFormString(e.what()) + "\r\n" + textBox10->Text;
+		}
 	}
 	private: System::Void checkedListBox1_ItemCheck(System::Object^  sender, System::Windows::Forms::ItemCheckEventArgs^  e) {
 		try {
@@ -1166,10 +1182,47 @@ namespace CourseWork {
 						j["pays"]["needToPay"].push_back(toString(checkedListBox1->Items[e->Index]->ToString()));
 			}
 
+			dataGridView1->Rows->Clear();
+
+			for (auto i : acc.getTn().getNeedToPay()) {
+				auto temp = acc.getDb().getJ()["payment"].at(i);
+				dataGridView1->Rows->Add(toFormString(i),
+					temp.find("tariff") != temp.end()
+					? toFormString(std::to_string((double)temp["tariff"]))
+					: "-",
+					temp.find("norm") != temp.end()
+					? toFormString(std::to_string((double)temp["norm"]))
+					: "-",
+					toFormString(temp["type"]));
+			}
+
 			acc.getDb().save();
 		}
 		catch (json::exception e) {
 			textBox10->Text = "There is some error: " + toFormString(e.what()) + "\r\n" + textBox10->Text;
+		}
+		catch (std::exception e) {
+			textBox10->Text = toFormString(e.what()) + "\r\n" + textBox10->Text;
+		}
+	}
+	private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
+		json years = {};
+
+		try {
+			for (auto i : acc.getLl().getAllPayments())
+				if (currentTime.current.Year - toSystemDate(i["unixtime"]).Year > 0)
+					years[toString(toSystemDate(i["unixtime"]).Year.ToString())].push_back(i);
+
+			for (auto i : years.items()) {
+				std::ofstream file(i.key() + ".json");
+				if (file.is_open())
+					file << std::setw(4) << i.value() << std::endl;
+				file.close();
+				textBox10->Text = toFormString(i.key()) + ".json file is saved\r\n" + textBox10->Text;
+			}
+		}
+		catch (json::exception e) {
+			textBox10->Text = "Error: " + toFormString(e.what()) + "\r\n" + textBox10->Text;
 		}
 		catch (std::exception e) {
 			textBox10->Text = toFormString(e.what()) + "\r\n" + textBox10->Text;

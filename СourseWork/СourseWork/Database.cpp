@@ -9,6 +9,7 @@ Database::Database(std::string filename) {
 	std::ifstream file(filename);
 	if (!file.is_open()) throw std::exception("File corrupted or didn't find");
 	file >> this->j;
+	file.close();
 	this->isDbLoaded = true;
 }
 
@@ -17,6 +18,7 @@ void Database::save(std::string filename) {
 		filename = this->filename;
 	std::ofstream file(filename);
 	file << std::setw(4) << this->j << std::endl;
+	file.close();
 }
 
 json& Database::getJ() {

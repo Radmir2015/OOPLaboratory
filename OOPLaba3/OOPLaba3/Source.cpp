@@ -59,11 +59,11 @@ void deletedStringCopyFile(string name, string tempName, int lineNumber) {
 }
 
 template<class T>
-void textToBinary(string path, vector<T>& data) {
+void writeToBinary(string path, vector<T>& data) {
 	ofstream fout(path, ios::binary | ios::trunc);
 	
 	for (auto& i : data)
-		fout.write((char*)(&i), sizeof(i));
+		fout.write((char*)(&i), sizeof(T));
 
 	fout.close();
 }
@@ -71,11 +71,10 @@ void textToBinary(string path, vector<T>& data) {
 template<class T>
 vector<T> readFromBinary(string path) {
 	vector<T> total;
-	//T temp;
 	ifstream fin(path, ios::in | ios::binary);
 	while (!fin.eof()) {
 		T temp;
-		fin.read((char*)(&temp), sizeof(temp));
+		fin.read((char*)(&temp), sizeof(T));
 		if (fin.eof()) break;
 		total.push_back(temp);
 	}
@@ -117,11 +116,11 @@ int main() {
 	std::cout << std::endl;
 
 	vector<double> numbers = { 2.45, 17e-2 };
-	textToBinary<double>("sample1.dat", numbers); //getLines("sample.txt")
+	writeToBinary<double>("sample1.dat", numbers); //getLines("sample.txt")
 	vector<int> ints = { 1, 17, 20 };
-	textToBinary<int>("sample2.dat", ints);
+	writeToBinary<int>("sample2.dat", ints);
 	//Abonement ab = {id = 12312, f = ""}
-	//textToBinary("sample2.txt", vector<Abonement>{ { 12343, "123", "234", "234", "4534fs" } });
+	//writeToBinary("sample2.txt", vector<Abonement>{ { 12343, "123", "234", "234", "4534fs" } });
 	for (auto i : readFromBinary<int>("sample2.dat"))
 		cout << i << endl;
 
@@ -140,7 +139,7 @@ int main() {
 		cout << i.id << " " << i.f << " " << i.i << " " << i.o << " " << i.address << endl;
 	}
 
-	textToBinary("sampleStruct.dat", ab);
+	writeToBinary("sampleStruct.dat", ab);
 	auto str = readFromBinary<Abonement>("sampleStruct.dat");
 
 	for (auto i : str) {
