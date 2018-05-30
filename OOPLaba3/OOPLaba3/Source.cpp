@@ -95,13 +95,15 @@ vector<string> getLines(string filename, string delim = "\n") {
 	return total;
 }
 
-struct Abonement {
-	int id = 0;
-	string f = "", i = "", o = "", address = "";
+class Abonement {
+	public:
+		Abonement() {};
+		int id = 0;
+		string f = "", i = "", o = "", address = "";
 };
 
 int main() {
-
+	/*
 	createFile("Hello.txt", vector<int>{1, 2, 5, 10});
 	//printFile("Hello.txt");
 	appendToFile("Hello.txt", vector<int>{3, 14, 15, 92});
@@ -123,6 +125,7 @@ int main() {
 	//writeToBinary("sample2.txt", vector<Abonement>{ { 12343, "123", "234", "234", "4534fs" } });
 	for (auto i : readFromBinary<int>("sample2.dat"))
 		cout << i << endl;
+	*/
 
 	vector<Abonement> ab;
 	

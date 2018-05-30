@@ -693,7 +693,6 @@ namespace CourseWork {
 			}
 				acc.login(toString(textBox1->Text), toString(textBox2->Text));
 				textBox10->Text = "Logged in: " + acc.getTn().intro() + " account\r\n" + textBox10->Text;
-				/*textBox10->Text += acc.getTn().isAdminMode + "\r\n";*/
 
 				isLogin = true;
 
@@ -934,7 +933,6 @@ namespace CourseWork {
 				}
 				else // paid
 					if (currentTime.current.AddMonths(1).ToString("MMMM yyyy") == temp.ToString("MMMM yyyy")) {
-						//currentTime.current = temp;
 						currentTime.current = DateTime(temp.Year, temp.Month, 1, temp.Hour, temp.Minute, temp.Second);
 						textBox10->Text = "New month is " + currentTime.current.ToString("MMMM") + "\r\n" + textBox10->Text;
 						dataGridView1->Rows->Clear();
@@ -988,8 +986,8 @@ namespace CourseWork {
 			textBox10->Text = toFormString(e.what()) + "\r\n" + textBox10->Text;
 		}
 		catch (std::exception e) {
-			textBox10->Text = toFormString(e.what()) + "\r\n" + textBox10->Text;
-			throw std::exception("File database.json can't be opened");
+			textBox10->Text = "File database.json can't be opened\r\n"
+				+ toFormString(e.what()) + "\r\n" + textBox10->Text;
 		}
 	}
 	private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {

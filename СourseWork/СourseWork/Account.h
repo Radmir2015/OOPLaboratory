@@ -3,8 +3,7 @@
 #include <string>
 #include <set>
 #include <algorithm>
-//#include "Tenant.h"
-//#include "Landlord.h"
+
 #include "Database.h"
 
 #include "json.hpp"

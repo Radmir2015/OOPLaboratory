@@ -1,5 +1,4 @@
 #include "Account.h"
-//#include "Database.h"
 
 Account::Account() {
 
@@ -25,47 +24,12 @@ void Account::connectToDb(std::string path) {
 }
 
 void Account::login(std::string login, std::string password) {
-	/*this->ll = this->db.getAdminUser(login, password);
-	if (!this->ll.adminMode)*/
 		this->tn = this->db.getUser(login, password);
 }
 
 void Account::regist(std::string login, std::string password, std::string name, std::string surname,
 	std::string father, std::string address, unsigned int area, unsigned int people,
 	std::vector<std::string> facilities) {
-	/*json person = R"(
-		{
-            "auth": {
-                "login": "",
-                "password": ""
-            },
-            "privacy": {
-                "name": "",
-                "surname": "",
-				"fathersname": "",
-				"address: "",
-				"area": 0,
-				"livingpeople": 0,
-				"facilities": ""
-            }
-        }
-	)"_json;*/
-	/*json person = {
-		{"auth", {
-			{"login", ""},
-			{"password", ""}
-		},
-		"privacy", {
-			{"name", ""},
-			{"surname", ""},
-			{"father's name", ""},
-			{"address", ""},
-			{"area", 0},
-			{"living people", 0},
-			{"facilities", ""}
-		}
-		}
-	};*/
 
 	for (auto i : db.getJ()["users"]) {
 		if (i["auth"]["login"] == login)
@@ -82,8 +46,7 @@ void Account::regist(std::string login, std::string password, std::string name, 
 	person["privacy"]["address"] = address;
 	person["privacy"]["area"] = area;
 	person["privacy"]["living people"] = people;
-	//person["privacy"]["facilities"] = facilities;
-
+	
 	person["pays"]["needToPay"] = facilities;
 
 	Tenant temp(&person);

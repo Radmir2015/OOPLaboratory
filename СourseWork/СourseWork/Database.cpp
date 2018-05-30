@@ -36,26 +36,9 @@ Tenant Database::getUser(std::string login, std::string password) {
 			return Tenant(&i);
 		}
 	}
-
-	/*for (int i = 0; i < j["users"].size(); i++) {
-		if (j["users"][i]["auth"]["login"] == login && j["users"][i]["auth"]["password"] == password)
-			return Tenant(&j["users"][i]);
-	}*/
 	
 	throw std::exception("User isn't found...");
-
-	//return Tenant();
 }
-
-//Landlord Database::getAdminUser(std::string login, std::string password) {
-//	for (auto& i : j["users"]) {
-//		if (i["auth"]["login"] == login && i["auth"]["password"] == password &&
-//			i.at("auth").find("isAdmin") != i.at("auth").end())
-//			return Landlord(&i);
-//	}
-//
-//	throw std::exception("User isn't found...");
-//}
 
 void Database::addUserToDb(Tenant tn) {
 	if (*(tn.getJ()) != 0)
@@ -73,8 +56,4 @@ void Database::deleteUser(Tenant tn) {
 		}
 	if (index != -1)
 		this->j["users"].erase(index);
-	/*if (*(tn.j) != 0)
-		*(tn.j) = nullptr;
-	else
-		tn.ghost = nullptr;*/
 }

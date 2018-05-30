@@ -9,11 +9,6 @@ Landlord::Landlord() {
 
 std::vector<double> Landlord::getBill(std::vector<std::vector<std::string>> map,
 	std::vector<std::vector<double>> numbers, Tenant tn, json payment) {
-	/*for (auto i : map)
-		this->allPayments.push_back({
-			{"sendor", (std::string)tn.j->at("name") + " " + (std::string)tn.j->at("surname")},
-			{}
-			})*/
 	// bill = tariff * pokazaniya
 	// pok == 0 -> bill = norm * living people * tariff
 	// type == f -> bill = area * tariff
