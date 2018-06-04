@@ -139,6 +139,27 @@
                 "name": "",
                 "surname": ""
             }
+        },
+        {
+            "auth": {
+                "login": "234234",
+                "password": "234234"
+            },
+            "pays": {
+                "needToPay": [
+                    "gas",
+                    "renovation",
+                    "water"
+                ]
+            },
+            "privacy": {
+                "address": "",
+                "area": 4,
+                "father's name": "",
+                "living people": 2,
+                "name": "",
+                "surname": ""
+            }
         }
     ]
 }

@@ -64,3 +64,22 @@ int Landlord::getUnpaidMonth(Tenant tn) {
 json Landlord::getAllPayments() {
 	return this->allPayments;
 }
+
+std::vector<std::string> Landlord::saveOutdated(int currentUnixtime) {
+	json years = {};
+	std::vector<std::string> fileNames;
+
+	for (auto i : this->allPayments)
+		if (toSystemDate(currentUnixtime).Year - toSystemDate(i["unixtime"]).Year > 0)
+			years[toString(toSystemDate(i["unixtime"]).Year.ToString())].push_back(i);
+
+	for (auto i : years.items()) {
+		std::ofstream file(i.key() + ".json");
+		if (file.is_open())
+			file << std::setw(4) << i.value() << std::endl;
+		file.close();
+		fileNames.push_back(i.key());
+	}
+
+	return fileNames;
+}

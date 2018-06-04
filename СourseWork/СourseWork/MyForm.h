@@ -1204,20 +1204,9 @@ namespace CourseWork {
 		}
 	}
 	private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
-		json years = {};
-
 		try {
-			for (auto i : acc.getLl().getAllPayments())
-				if (currentTime.current.Year - toSystemDate(i["unixtime"]).Year > 0)
-					years[toString(toSystemDate(i["unixtime"]).Year.ToString())].push_back(i);
-
-			for (auto i : years.items()) {
-				std::ofstream file(i.key() + ".json");
-				if (file.is_open())
-					file << std::setw(4) << i.value() << std::endl;
-				file.close();
-				textBox10->Text = toFormString(i.key()) + ".json file is saved\r\n" + textBox10->Text;
-			}
+			for (auto i : acc.getLl().saveOutdated(toUnixTime(currentTime.current)))
+				textBox10->Text = toFormString(i) + ".json file is saved\r\n" + textBox10->Text;
 		}
 		catch (json::exception e) {
 			textBox10->Text = "Error: " + toFormString(e.what()) + "\r\n" + textBox10->Text;
