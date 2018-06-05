@@ -7,6 +7,22 @@ Landlord::Landlord() {
 	file.close();
 }
 
+bool Landlord::getStarted() {
+	return this->started;
+}
+
+void Landlord::setStarted(bool value) {
+	this->started = value;
+}
+
+bool Landlord::getFinished() {
+	return this->finished;
+}
+
+void Landlord::setFinished(bool value) {
+	this->finished = value;
+}
+
 std::vector<double> Landlord::getBill(std::vector<std::vector<std::string>> map,
 	std::vector<std::vector<double>> numbers, Tenant tn, json payment) {
 	// bill = tariff * pokazaniya

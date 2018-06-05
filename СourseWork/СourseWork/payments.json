@@ -460,5 +460,16 @@
         "tariff": "3.000000",
         "type": "meter",
         "unixtime": 1547002681
+    },
+    {
+        "check": "6",
+        "login": "234",
+        "meters": "2",
+        "norm": "10.000000",
+        "payments": "water",
+        "sender": "Petr Petrov",
+        "tariff": "3.000000",
+        "type": "meter",
+        "unixtime": 1542934822
     }
 ]

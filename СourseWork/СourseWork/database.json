@@ -147,9 +147,9 @@
             },
             "pays": {
                 "needToPay": [
-                    "gas",
                     "renovation",
-                    "water"
+                    "water",
+                    "gas"
                 ]
             },
             "privacy": {

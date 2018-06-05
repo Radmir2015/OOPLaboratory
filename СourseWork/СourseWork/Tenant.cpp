@@ -30,6 +30,14 @@ json& Tenant::getGhost() {
 	return this->ghost;
 }
 
+bool Tenant::getIsAdminMode() {
+	return this->isAdminMode;
+}
+
+void Tenant::setIsAdminMode(bool value) {
+	this->isAdminMode = value;
+}
+
 void Tenant::addIntoJson(std::string path, std::string key) {
 	(*j).at("privacy")[path] = key;
 }

@@ -715,7 +715,7 @@ namespace CourseWork {
 
 				dataGridView1->Rows->Clear();
 
-				if (acc.getTn().isAdminMode) {
+				if (acc.getTn().getIsAdminMode()) {
 					button5->Enabled = false;
 					button4->Enabled = false;
 					button6->Enabled = true;
@@ -788,7 +788,7 @@ namespace CourseWork {
 	}
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 		try {
-			if (acc.getTn().isAdminMode)
+			if (acc.getTn().getIsAdminMode())
 				throw std::exception("You can't delete Admin account");
 			acc.connectToDb("database.json");
 			acc.getDb().deleteUser(acc.getDb().getUser(toString(textBox1->Text), toString(textBox2->Text)));
@@ -804,6 +804,8 @@ namespace CourseWork {
 			checkedListBox1->Enabled = false;
 			dataGridView1->Rows->Clear();
 
+			isLogin = false;
+
 			textBox10->Text = "Account is deleted from " + toFormString(acc.getDb().filename) + "\r\n" + textBox10->Text;
 		}
 		catch (json::exception e) {
@@ -814,7 +816,7 @@ namespace CourseWork {
 		}
 	}
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (!isLogin || acc.getLl().finished)
+		if (!isLogin || acc.getLl().getFinished())
 			return;
 
 		std::vector<std::vector<std::string>> total;
@@ -865,7 +867,7 @@ namespace CourseWork {
 	}
 	private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
 
-		if (acc.getLl().started) {
+		if (acc.getLl().getStarted()) {
 			std::vector<std::vector<std::string>> total;
 			std::vector<std::vector<double>> numbers;
 			std::vector<std::string> temp;
@@ -922,11 +924,11 @@ namespace CourseWork {
 			if (!isLogin)
 				currentTime.current = temp;
 			else
-				if (!acc.getLl().finished) { // not paid
-					if (!acc.getLl().started && currentTime.current.ToString("MMMM yyyy") == temp.ToString("MMMM yyyy")
+				if (!acc.getLl().getFinished()) { // not paid
+					if (!acc.getLl().getStarted() && currentTime.current.ToString("MMMM yyyy") == temp.ToString("MMMM yyyy")
 						&& temp.Day <= 20) // not sended meters
 						currentTime.current = temp;
-					if (acc.getLl().started && currentTime.current.ToString("MMMM yyyy") == temp.ToString("MMMM yyyy")
+					if (acc.getLl().getStarted() && currentTime.current.ToString("MMMM yyyy") == temp.ToString("MMMM yyyy")
 						&& temp.Compare(currentTime.sendedMeters, temp) <= 0) // sended meters
 						currentTime.current = temp;
 					dateTimePicker1->Value = currentTime.current;
@@ -947,7 +949,7 @@ namespace CourseWork {
 								: "-",
 								toFormString(temp["type"]));
 						}
-						acc.getLl().finished = false;
+						acc.getLl().setFinished(false);
 					}
 					else {
 						if (currentTime.current.ToString("MMMM yyyy") == temp.ToString("MMMM yyyy"))
@@ -991,7 +993,7 @@ namespace CourseWork {
 		}
 	}
 	private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
-		if (!acc.getTn().isAdminMode)
+		if (!acc.getTn().getIsAdminMode())
 			return;
 
 		json payment = {};

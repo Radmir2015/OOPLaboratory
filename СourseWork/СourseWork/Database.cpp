@@ -30,7 +30,7 @@ Tenant Database::getUser(std::string login, std::string password) {
 		if (i["auth"]["login"] == login && i["auth"]["password"] == password) {
 			if (i["auth"].find("isAdmin") != i["auth"].end()) {
 				Tenant tmp = Tenant(&i);
-				tmp.isAdminMode = true;
+				tmp.setIsAdminMode(true);
 				return tmp;
 			}
 			return Tenant(&i);

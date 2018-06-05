@@ -19,8 +19,15 @@ class Landlord {
 		int getUnpaidMonth(Tenant tn);
 		json getAllPayments();
 		std::vector<std::string> saveOutdated(int unixtime);
-		bool finished = false;
-		bool started = false;
+
+		bool getFinished();
+		bool getStarted();
+
+		void setFinished(bool value);
+		void setStarted(bool value);
 	private:
 		json allPayments;
+
+		bool finished = false;
+		bool started = false;
 };
