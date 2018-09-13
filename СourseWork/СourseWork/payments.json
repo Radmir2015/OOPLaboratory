@@ -471,5 +471,27 @@
         "tariff": "3.000000",
         "type": "meter",
         "unixtime": 1542934822
+    },
+    {
+        "check": "30,9",
+        "login": "123",
+        "meters": "10.3",
+        "norm": "10.000000",
+        "payments": "water",
+        "sender": "Ivan Ivanov",
+        "tariff": "3.000000",
+        "type": "meter",
+        "unixtime": 1545941185
+    },
+    {
+        "check": "100",
+        "login": "123",
+        "meters": "20",
+        "norm": "5.000000",
+        "payments": "gas",
+        "sender": "Ivan Ivanov",
+        "tariff": "5.000000",
+        "type": "meter",
+        "unixtime": 1545941185
     }
 ]

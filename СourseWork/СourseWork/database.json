@@ -23,7 +23,8 @@
             },
             "pays": {
                 "needToPay": [
-                    "water"
+                    "water",
+                    "gas"
                 ]
             },
             "privacy": {
@@ -40,7 +41,8 @@
             },
             "pays": {
                 "needToPay": [
-                    "water"
+                    "water",
+                    "gas"
                 ]
             },
             "privacy": {
@@ -71,7 +73,8 @@
             },
             "pays": {
                 "needToPay": [
-                    "water"
+                    "water",
+                    "gas"
                 ]
             },
             "privacy": {
@@ -90,7 +93,8 @@
             },
             "pays": {
                 "needToPay": [
-                    "water"
+                    "water",
+                    "gas"
                 ]
             },
             "privacy": {
@@ -109,7 +113,8 @@
             },
             "pays": {
                 "needToPay": [
-                    "water"
+                    "water",
+                    "gas"
                 ]
             },
             "privacy": {
@@ -128,7 +133,8 @@
             },
             "pays": {
                 "needToPay": [
-                    "water"
+                    "water",
+                    "gas"
                 ]
             },
             "privacy": {
@@ -149,12 +155,34 @@
                 "needToPay": [
                     "renovation",
                     "water",
+                    "gas",
                     "gas"
                 ]
             },
             "privacy": {
                 "address": "",
                 "area": 4,
+                "father's name": "",
+                "living people": 2,
+                "name": "",
+                "surname": ""
+            }
+        },
+        {
+            "auth": {
+                "login": "uhanov",
+                "password": "777"
+            },
+            "pays": {
+                "needToPay": [
+                    "gas",
+                    "renovation",
+                    "water"
+                ]
+            },
+            "privacy": {
+                "address": "",
+                "area": 3,
                 "father's name": "",
                 "living people": 2,
                 "name": "",

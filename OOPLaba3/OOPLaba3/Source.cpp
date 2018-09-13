@@ -95,15 +95,38 @@ vector<string> getLines(string filename, string delim = "\n") {
 	return total;
 }
 
+template<class T>
+T searchRecordById(vector<T> arr, int key = 0) {
+	for (T a : arr)
+		if (a.id == key)
+			return a;
+	throw std::exception("Record doesn't found...");
+}
+
+template<class T>
+void deleteRecord(vector<T>& arr, T elem) {
+	auto it = std::find(arr.begin(), arr.end(), elem);
+	if (it != arr.end())
+		arr.erase(it);
+}
+
 class Abonement {
 	public:
 		Abonement() {};
 		int id = 0;
-		string f = "", i = "", o = "", address = "";
+		char f[256] = "", i[256] = "", o[256] = "", address[256] = "";
+
+		friend bool operator==(Abonement elem1, Abonement elem2) {
+			return elem1.id == elem2.id
+				&& strcmp(elem1.f, elem2.f) == 0
+				&& strcmp(elem1.i, elem2.i) == 0
+				&& strcmp(elem1.o, elem2.o) == 0
+				&& strcmp(elem1.address, elem2.address) == 0;
+		}
 };
 
 int main() {
-	/*
+	
 	createFile("Hello.txt", vector<int>{1, 2, 5, 10});
 	//printFile("Hello.txt");
 	appendToFile("Hello.txt", vector<int>{3, 14, 15, 92});
@@ -125,7 +148,7 @@ int main() {
 	//writeToBinary("sample2.txt", vector<Abonement>{ { 12343, "123", "234", "234", "4534fs" } });
 	for (auto i : readFromBinary<int>("sample2.dat"))
 		cout << i << endl;
-	*/
+	
 
 	vector<Abonement> ab;
 	
@@ -134,7 +157,9 @@ int main() {
 		Abonement temp;
 		file >> temp.id;
 		file >> temp.f >> temp.i >> temp.o;
-		getline(file, temp.address, '\n');
+		string str = "";
+		getline(file, str, '\n');
+		strcpy_s(temp.address, str.c_str());
 		ab.push_back(temp);
 	}
 
@@ -146,7 +171,37 @@ int main() {
 	auto str = readFromBinary<Abonement>("sampleStruct.dat");
 
 	for (auto i : str) {
-		cout << i.f << " " << i.i << " " << i.o << " " << i.address << endl;
+		cout << i.id << " " << i.f << " " << i.i << " " << i.o << " " << i.address << endl;
+	}
+
+	cout << "\nSearching:\n";
+
+	try {
+		Abonement t = searchRecordById<Abonement>(ab, 23451);
+		cout << t.id << " " << t.f << " " << t.i << " " << t.o << " " << t.address << endl;
+
+		deleteRecord(ab, t);
+	}
+	catch (std::exception e) {
+		cout << e.what();
+	}
+
+	try {
+		Abonement t = searchRecordById<Abonement>(ab, 11111);
+		cout << t.id << " " << t.f << " " << t.i << " " << t.o << " " << t.address << endl;
+	}
+	catch (std::exception e) {
+		cout << e.what() << " with id: " << 11111 << endl;
+	}
+
+	writeToBinary("sampleStruct.dat", ab);
+
+	cout << "\nDeleted:\n";
+
+	str = readFromBinary<Abonement>("sampleStruct.dat");
+
+	for (auto i : str) {
+		cout << i.id << " " << i.f << " " << i.i << " " << i.o << " " << i.address << endl;
 	}
 
 	file.close();
